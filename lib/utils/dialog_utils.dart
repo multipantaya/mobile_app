@@ -1,0 +1,7 @@
+
+
+class DialogsUtils {
+  DialogsUtils();
+
+  
+}
