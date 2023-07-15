@@ -1,8 +1,38 @@
 import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
-
+import 'package:equatable/equatable.dart';
+import 'package:mobile_app/constants/constants.dart';
+import 'package:domain/domain.dart';
 part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit() : super(HomeInitial());
+  HomeCubit() : super(const HomeState());
+
+  initPlatform () {
+    final images = [MPYImages.hbo,MPYImages.amazon,MPYImages.disney,MPYImages.youtube,MPYImages.spotify,MPYImages.netflix];
+    int index = 0;
+    final List<PlatformModel> platforms = [];
+    for (var plan in dataPlatforms) {
+      platforms.add(plan.copyWith(image: images[index]));
+      index++;
+    }
+    emit(state.copyWith(platforms: platforms));
+  }
+
+  favoritePlatform ({required String id}) {
+    List<PlatformModel> newPlatform = [];
+    List<PlatformModel> newPlatformFavorte = [];
+    for (var platform in state.platforms) {
+      if(platform.id == id) {
+        newPlatform.add(platform.copyWith(favorite: !platform.favorite));
+      }else{
+        newPlatform.add(platform);
+      }
+    }
+    for (var platform in newPlatform) {
+      if(platform.favorite) {
+        newPlatformFavorte.add(platform);
+      }
+    }
+    emit(state.copyWith(platforms: newPlatform,platformsFavorite: newPlatformFavorte));
+  }
 }

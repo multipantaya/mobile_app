@@ -1,16 +1,18 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/constants/constants.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mobile_app/ui/home/home.dart';
 import 'package:mobile_app/utils/media_utils.dart';
 import 'package:presentation/presentation.dart';
 
 class CardPlatform extends StatelessWidget {
-  const CardPlatform({super.key});
+  final PlatformModel platform;
+  const CardPlatform({super.key, required this.platform});
 
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    final List<String> plans = ['Basico', 'Familiar', 'Premium', 'Ultra'];
     return Container(
       width: width > 300 ? 300 : width * 0.9,
       alignment: Alignment.topCenter,
@@ -25,7 +27,7 @@ class CardPlatform extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
             child: MediaUtils().getImageWidget(
-              MPYImages.hbo,
+              platform.image,
               useFileImage: false,
               fit: BoxFit.contain
             ),
@@ -39,7 +41,7 @@ class CardPlatform extends StatelessWidget {
               children: [
                 Expanded(
                   child: AutoSizeText(
-                    'HBO MAX',
+                    platform.namePlatform,
                     minFontSize: 18,
                     maxLines: 1,
                     style: AppTheme.textStyles.titleText,
@@ -47,11 +49,12 @@ class CardPlatform extends StatelessWidget {
                 ),
                 const SizedBox(width: 10,),
                 IconButtonCustom(
-                  icon: Icons.favorite_border,
-                  color: AppTheme.colors.white,
+                  icon: platform.favorite ? Icons.favorite : Icons.favorite_border,
+                  color: platform.favorite ? AppTheme.colors.primaryColor : AppTheme.colors.white,
                   size: 30,
                   onPressed: () {
-                    
+                    final cubit = context.read<HomeCubit>();
+                    cubit.favoritePlatform(id: platform.id);
                   },
                 ),
               ],
@@ -76,8 +79,8 @@ class CardPlatform extends StatelessWidget {
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: plans.map((e) => Text(
-                          '✓ $e',
+                        children: platform.plans.map((e) => Text(
+                          '✓ ${e.namePlan}',
                           maxLines: 1,
                           textAlign: TextAlign.justify,
                           style: AppTheme.textStyles.white14F400,
