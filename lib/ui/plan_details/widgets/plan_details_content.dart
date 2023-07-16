@@ -41,6 +41,15 @@ class PlanDetailsContent extends StatelessWidget {
 
             const SizedBox(height: 20,),
 
+            AppButton(
+              name: 'Agregar al carrito',
+              onPressed: () {
+                
+              },
+            ),
+
+            const SizedBox(height: 20,),
+
             AutoSizeText(
               'Caracteristicas',
               minFontSize: 14,
