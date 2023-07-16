@@ -16,5 +16,15 @@ class PlanDetailsCubit extends Cubit<PlanDetailsState> {
       }
     }
   }
-  
+
+  ChangeTotalAmount (bool isAdd) {
+    if(isAdd){
+      emit(state.copyWith(platform: state.platform!.copyWith(totalAmount: state.platform!.totalAmount + 1)));
+    }else{
+      if(state.platform!.totalAmount > 1){
+        emit(state.copyWith(platform: state.platform!.copyWith(totalAmount: state.platform!.totalAmount - 1)));
+      }
+    }
+  }
+
 }
