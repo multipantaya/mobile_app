@@ -8,13 +8,16 @@ import 'package:presentation/presentation.dart';
 
 class CardPlatform extends StatelessWidget {
   final PlatformModel platform;
-  const CardPlatform({super.key, required this.platform});
+  final bool isFavorite;
+  const CardPlatform({super.key, required this.platform, required this.isFavorite});
 
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     return Container(
-      width: width > 300 ? 300 : width * 0.9,
+      width: isFavorite
+        ? 200
+        : width > 300 ? 300 : width * 0.9,
       alignment: Alignment.topCenter,
       decoration: BoxDecoration(
         boxShadow: AppTheme.shadows.white10,
@@ -29,7 +32,8 @@ class CardPlatform extends StatelessWidget {
             child: MediaUtils().getImageWidget(
               platform.image,
               useFileImage: false,
-              fit: BoxFit.contain
+              fit: isFavorite ? BoxFit.cover  : BoxFit.contain,
+              height: isFavorite ? 150 : null
             ),
           ),
 
@@ -42,16 +46,16 @@ class CardPlatform extends StatelessWidget {
                 Expanded(
                   child: AutoSizeText(
                     platform.namePlatform,
-                    minFontSize: 18,
+                    minFontSize: 14,
                     maxLines: 1,
-                    style: AppTheme.textStyles.titleText,
+                    style: isFavorite ? AppTheme.textStyles.white14F700: AppTheme.textStyles.titleText,
                   ),
                 ),
                 const SizedBox(width: 10,),
                 IconButtonCustom(
                   icon: platform.favorite ? Icons.favorite : Icons.favorite_border,
                   color: platform.favorite ? AppTheme.colors.primaryColor : AppTheme.colors.white,
-                  size: 30,
+                  size: isFavorite ? 24 : 30,
                   onPressed: () {
                     final cubit = context.read<HomeCubit>();
                     cubit.favoritePlatform(id: platform.id);
@@ -62,43 +66,50 @@ class CardPlatform extends StatelessWidget {
           ),
 
           const SizedBox(height: 5,),
-          
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Conoce nuestros planes',
-                  maxLines: 1,
-                  style: AppTheme.textStyles.white14F700,
-                ),
-                const SizedBox(height: 5,),
-                Row(
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: platform.plans.map((e) => Text(
-                          '✓ ${e.namePlan}',
-                          maxLines: 1,
-                          textAlign: TextAlign.justify,
-                          style: AppTheme.textStyles.white14F400,
-                        )).toList(),
-                      )
-                    ),
-                    const SizedBox(width: 10,),
-                    AppButtonMini(
-                      text: 'Ver planes',
-                      onPressed: () {
-                        
-                      },
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
+
+          if(!isFavorite)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Conoce nuestros planes',
+                    maxLines: 1,
+                    style: AppTheme.textStyles.white14F700,
+                  ),
+                  const SizedBox(height: 5,),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: platform.plans.map((e) => Text(
+                            '✓ ${e.namePlan}',
+                            maxLines: 1,
+                            textAlign: TextAlign.justify,
+                            style: AppTheme.textStyles.white14F400,
+                          )).toList(),
+                        )
+                      ),
+                      const SizedBox(width: 10,),
+                      AppButtonMini(
+                        text: 'Ver planes',
+                        onPressed: () {
+
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            )
+            else
+              AppButton(
+                name: 'Ver planes',
+                onPressed: () {
+                },
+              ),
           
           const SizedBox(height: 10,),
         ],
