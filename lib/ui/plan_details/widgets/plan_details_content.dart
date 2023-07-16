@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mobile_app/ui/cart/cart.dart';
 import 'package:mobile_app/ui/plan_details/plan_details.dart';
 import 'package:mobile_app/utils/utils.dart';
 import 'package:presentation/presentation.dart';
@@ -12,6 +13,7 @@ class PlanDetailsContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<PlanDetailsCubit, PlanDetailsState>(
       builder: (context, state) {
+        final cuibt = context.read<CartCubit>();
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -43,9 +45,7 @@ class PlanDetailsContent extends StatelessWidget {
 
             AppButton(
               name: 'Agregar al carrito',
-              onPressed: () {
-                
-              },
+              onPressed: () => cuibt.addToCart(state.platform!.copyWith(plans: [state.plan!])),
             ),
 
             const SizedBox(height: 20,),
