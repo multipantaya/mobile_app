@@ -15,18 +15,28 @@ class PlanAndPrice extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           child: Row(
             children: [
+              Expanded(
+                child: AutoSizeText(
+                  state.platform!.namePlatform,
+                  minFontSize: 14,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: AppTheme.textStyles.titleText,
+                ),
+              ),
               const SizedBox(
                 width: 10,
               ),
               Container(
                 alignment: Alignment.center,
-                padding: const EdgeInsets.all(5),
+                padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
                 decoration: BoxDecoration(
                   color: AppTheme.colors.primaryColor,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: AutoSizeText(
-                  state.plan!.price.toString()
+                  '\$ ${state.plan!.price} USD',
+                  style: AppTheme.textStyles.white16F500,
                 ),
               )
             ],

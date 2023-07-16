@@ -29,13 +29,15 @@ class PlanDetailsContent extends StatelessWidget {
 
             const SizedBox(height: 15,),
 
-            AutoSizeText(
-              state.platform!.namePlatform,
-              minFontSize: 14,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: AppTheme.textStyles.titleText,
-            ),
+            PlanAndPrice(),
+
+            // AutoSizeText(
+            //   state.platform!.namePlatform,
+            //   minFontSize: 14,
+            //   maxLines: 1,
+            //   overflow: TextOverflow.ellipsis,
+            //   style: AppTheme.textStyles.titleText,
+            // ),
 
             const SizedBox(height: 20,),
 
