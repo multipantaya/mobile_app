@@ -11,7 +11,10 @@ class PlanDetailsView extends StatelessWidget {
       appBar: const MainAppBar(),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
-        child: PlanDetailsContent(),
+        child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: PlanDetailsContent(),
+        ),
       ),
     );
   }

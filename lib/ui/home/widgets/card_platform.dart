@@ -29,13 +29,16 @@ class CardPlatform extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
-            child: MediaUtils().getImageWidget(
-              platform.image,
-              useFileImage: false,
-              fit: isFavorite ? BoxFit.cover  : BoxFit.contain,
-              height: isFavorite ? 150 : null
+          Hero(
+            tag: platform.id,
+            child: ClipRRect(
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
+              child: MediaUtils().getImageWidget(
+                platform.image,
+                useFileImage: false,
+                fit: isFavorite ? BoxFit.cover  : BoxFit.contain,
+                height: isFavorite ? 150 : null
+              ),
             ),
           ),
 
@@ -98,7 +101,7 @@ class CardPlatform extends StatelessWidget {
                       AppButtonMini(
                         text: 'Ver planes',
                         onPressed: () {
-                          cubit.serPlatform(platform);
+                          cubit.setPlatform(platform);
                           Navigator.push(context, MaterialPageRoute(builder: (context) => PlanDetailsView()));
                         },
                       ),
@@ -111,7 +114,7 @@ class CardPlatform extends StatelessWidget {
               AppButton(
                 name: 'Ver planes',
                 onPressed: () {
-                  cubit.serPlatform(platform);
+                  cubit.setPlatform(platform);
                   Navigator.push(context, MaterialPageRoute(builder: (context) => PlanDetailsView()));
                 },
               ),
