@@ -3,6 +3,7 @@ import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_app/ui/home/home.dart';
+import 'package:mobile_app/ui/plan_details/plan_details.dart';
 import 'package:mobile_app/utils/media_utils.dart';
 import 'package:presentation/presentation.dart';
 
@@ -14,6 +15,7 @@ class CardPlatform extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
+    final cubit = context.read<PlanDetailsCubit>();
     return Container(
       width: isFavorite
         ? 200
@@ -96,7 +98,8 @@ class CardPlatform extends StatelessWidget {
                       AppButtonMini(
                         text: 'Ver planes',
                         onPressed: () {
-
+                          cubit.serPlatform(platform);
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => PlanDetailsView()));
                         },
                       ),
                     ],
@@ -108,6 +111,8 @@ class CardPlatform extends StatelessWidget {
               AppButton(
                 name: 'Ver planes',
                 onPressed: () {
+                  cubit.serPlatform(platform);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => PlanDetailsView()));
                 },
               ),
           
