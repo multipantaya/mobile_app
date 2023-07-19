@@ -6,7 +6,7 @@ class PlanDetailsState extends Equatable {
     this.plan
   });
 
-  final PlatformModel? platform;
+  final PlatformsModel? platform;
   final PlansModel? plan;
 
   @override
@@ -15,7 +15,7 @@ class PlanDetailsState extends Equatable {
   ];
 
   PlanDetailsState copyWith({
-    PlatformModel? platform,
+    PlatformsModel? platform,
     PlansModel? plan
   }){
     return PlanDetailsState(

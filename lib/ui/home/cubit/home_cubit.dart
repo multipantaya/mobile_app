@@ -10,7 +10,7 @@ class HomeCubit extends Cubit<HomeState> {
   initPlatform () {
     final images = [MPYImages.hbo,MPYImages.amazon,MPYImages.disney,MPYImages.youtube,MPYImages.spotify,MPYImages.netflix];
     int index = 0;
-    final List<PlatformModel> platforms = [];
+    final List<PlatformsModel> platforms = [];
     for (var plan in dataPlatforms) {
       platforms.add(plan.copyWith(image: images[index]));
       index++;
@@ -19,8 +19,8 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   favoritePlatform ({required String id}) {
-    List<PlatformModel> newPlatform = [];
-    List<PlatformModel> newPlatformFavorte = [];
+    List<PlatformsModel> newPlatform = [];
+    List<PlatformsModel> newPlatformFavorte = [];
 
     for (var platform in state.platforms) {
       if(platform.id == id) {

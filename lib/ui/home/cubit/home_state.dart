@@ -6,15 +6,15 @@ class HomeState extends Equatable {
     this.platformsFavorite = const [],
   });
 
-  final List<PlatformModel> platforms;
-  final List<PlatformModel> platformsFavorite;
+  final List<PlatformsModel> platforms;
+  final List<PlatformsModel> platformsFavorite;
   
   @override
   List<Object?> get props => [platforms, platformsFavorite];
 
   HomeState copyWith({
-    List<PlatformModel>? platforms,
-    List<PlatformModel>? platformsFavorite
+    List<PlatformsModel>? platforms,
+    List<PlatformsModel>? platformsFavorite
   }){
     return HomeState(
       platforms: platforms ?? this.platforms,

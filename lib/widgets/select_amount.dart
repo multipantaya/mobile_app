@@ -5,7 +5,9 @@ class SelectAmount extends StatelessWidget {
   final VoidCallback onRemove;
   final VoidCallback onAdd;
   final int totalAmount;
-  const SelectAmount({super.key, required this.onRemove, required this.onAdd, required this.totalAmount});
+  final TextStyle? textStyle;
+  final TextAlign? textAlign;
+  const SelectAmount({super.key, required this.onRemove, required this.onAdd, required this.totalAmount, this.textStyle, this.textAlign});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,8 @@ class SelectAmount extends StatelessWidget {
       children: [
         Expanded(child: Text(
           'Cuentas a comprar',
-          style: AppTheme.textStyles.white16F700,
+          textAlign: textAlign ?? TextAlign.justify,
+          style: textStyle ?? AppTheme.textStyles.white16F700,
         )),
         const SizedBox(width: 10,),
         Container(

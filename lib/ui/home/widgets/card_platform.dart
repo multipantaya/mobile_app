@@ -8,7 +8,7 @@ import 'package:mobile_app/utils/media_utils.dart';
 import 'package:presentation/presentation.dart';
 
 class CardPlatform extends StatelessWidget {
-  final PlatformModel platform;
+  final PlatformsModel platform;
   final bool isFavorite;
   const CardPlatform({super.key, required this.platform, required this.isFavorite});
 

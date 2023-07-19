@@ -2,22 +2,22 @@ part of 'cart_cubit.dart';
 
 class CartState extends Equatable {
   const CartState({
-    this.platforms = const []
+    this.products = const []
   });
 
-  final List<PlatformModel> platforms;
+  final List<ProductModel> products;
   
   @override
   List<Object?> get props => [
-    platforms
+    products
   ];
 
   CartState copyWith({
-    List<PlatformModel>? platforms
+    List<ProductModel>? products
 
   }){
     return CartState(
-      platforms: platforms ?? this.platforms
+      products: products ?? this.products
     );
   }
 

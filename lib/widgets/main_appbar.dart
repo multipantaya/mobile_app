@@ -57,7 +57,7 @@ class MainAppBarState extends State<MainAppBar> {
                     visualDensity: VisualDensity.compact,
                     splashRadius: 18,
                   ),
-                  if(state.platforms.isNotEmpty)
+                  if(state.products.isNotEmpty)
                     Positioned(
                       top: 0,
                       right: 0,
@@ -73,7 +73,7 @@ class MainAppBarState extends State<MainAppBar> {
                           shape: BoxShape.circle,
                         ),
                         child: AutoSizeText(
-                          state.platforms.length.toString(),
+                          state.products.length.toString(),
                           maxLines: 1,
                           minFontSize: 10,
                           style: AppTheme.textStyles.primaryColor12F500,
