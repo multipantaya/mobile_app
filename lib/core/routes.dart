@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/ui/cart/cart.dart';
 import 'package:mobile_app/ui/home/home.dart';
 import 'package:mobile_app/ui/splash/slpash_view.dart';
 import 'package:mobile_app/widgets/widgets.dart';
@@ -7,5 +8,6 @@ class AppRouter {
     '/': (BuildContext contex) =>  const SplashPage(),
    HomeView.routeName: (BuildContext contex) => HomeView(),
    AppLayout.routeName: (BuildContext contex) => const AppLayout(),
+   CartView.routeName: (BuildContext contex) => const CartView(),
   };
 }
