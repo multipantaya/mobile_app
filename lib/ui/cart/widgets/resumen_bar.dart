@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:presentation/presentation.dart';
 
 class ResumenBar extends StatelessWidget {
-  const ResumenBar({super.key});
+  final double totalPrice;
+  const ResumenBar({super.key, required this.totalPrice});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class ResumenBar extends StatelessWidget {
                 ),
                 const SizedBox(height: 5,),
                 AutoSizeText(
-                  '\$20 USD',
+                  '\$${totalPrice} USD',
                   maxLines: 1,
                   minFontSize: 12,
                   overflow: TextOverflow.ellipsis,

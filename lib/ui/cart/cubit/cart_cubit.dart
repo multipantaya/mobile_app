@@ -16,6 +16,7 @@ class CartCubit extends Cubit<CartState> {
       platform: platform
     ));
     emit(state.copyWith(products: newPlatforms));
+    updateTotalPrice();
   }
 
   changeTotalAmount(String id, bool isAdd){
@@ -48,5 +49,14 @@ class CartCubit extends Cubit<CartState> {
       }
     }
     emit(state.copyWith(products: newProducts));
+    updateTotalPrice();
+  }
+
+  updateTotalPrice(){
+    double total = 0;
+    for (var product in state.products) {
+      total = total + (product.platform.totalAmount * product.platform.plans.first.price);
+    }
+    emit(state.copyWith(total: total));
   }
 }
