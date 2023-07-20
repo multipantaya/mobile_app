@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_app/ui/cart/cart.dart';
+import 'package:presentation/presentation.dart';
 
 class ContentCart extends StatelessWidget {
   const ContentCart({super.key});
@@ -19,7 +20,21 @@ class ContentCart extends StatelessWidget {
                 physics: const BouncingScrollPhysics(),
                 separatorBuilder: (context, index) => SizedBox(height: 15,), 
                 itemBuilder: (context, index) {
-                  return CardProduct(product: state.products[index]);
+                  return Dismissible(
+                    key: Key(state.products[index].id),
+                    direction: DismissDirection.startToEnd,
+                    background: Container(
+                      padding: const EdgeInsets.only(left: 15),
+                      alignment: Alignment.centerLeft,
+                      decoration: BoxDecoration(
+                        color: AppTheme.colors.red,
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                      child: Icon(Icons.delete_outline,color: AppTheme.colors.white,size: 35,),
+                    ),
+                    child: CardProduct(product: state.products[index]),
+                    onDismissed: (_) => context.read<CartCubit>().deleteProduct(state.products[index].id),
+                  );
                 }, 
               )
             ),

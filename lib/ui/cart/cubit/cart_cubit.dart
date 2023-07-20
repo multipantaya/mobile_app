@@ -64,6 +64,17 @@ class CartCubit extends Cubit<CartState> {
     updateTotalPrice();
   }
 
+  deleteProduct(String id){
+    List<ProductModel> newProducts = [];
+    for (var product in state.products) {
+      if(product.id != id){
+        newProducts.add(product);
+      }
+    }
+    emit(state.copyWith(products: newProducts));
+    updateTotalPrice();
+  }
+
   updateTotalPrice(){
     double total = 0;
     for (var product in state.products) {
