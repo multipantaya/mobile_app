@@ -8,13 +8,25 @@ class CartCubit extends Cubit<CartState> {
 
   addToCart (PlatformsModel platform) {
     List<ProductModel> newPlatforms = [];
+    bool exist = false;
     for (var product in state.products) {
-      newPlatforms.add(product);
+      if(product.platform.plans.first.id == platform.plans.first.id){
+        exist = true;
+        newPlatforms.add(
+          product.copyWith(platform: product.platform.copyWith(
+            totalAmount: platform.totalAmount + product.platform.totalAmount
+          ))
+        );
+      }else{
+        newPlatforms.add(product);
+      }
     }
-    newPlatforms.add(ProductModel(
-      id: DateTime.now().toIso8601String(), 
-      platform: platform
-    ));
+    if(!exist){
+      newPlatforms.add(ProductModel(
+        id: DateTime.now().toIso8601String(), 
+        platform: platform
+      ));
+    }
     emit(state.copyWith(products: newPlatforms));
     updateTotalPrice();
   }
