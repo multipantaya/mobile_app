@@ -10,10 +10,7 @@ class CartView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: MainAppBar(enableActions: false,),
-      body: Padding(
-        padding: const EdgeInsets.all(15),
-        child: ContentCart(),
-      )
+      body: ContentCart()
     );
   }
 }

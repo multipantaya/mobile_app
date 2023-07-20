@@ -15,13 +15,16 @@ class ContentCart extends StatelessWidget {
               child: ListView.separated(
                 itemCount: state.products.length,
                 shrinkWrap: true,
+                padding: const EdgeInsets.all(15),
                 physics: const BouncingScrollPhysics(),
                 separatorBuilder: (context, index) => SizedBox(height: 15,), 
                 itemBuilder: (context, index) {
                   return CardProduct(product: state.products[index]);
                 }, 
               )
-            )
+            ),
+            const SizedBox(height: 15,),
+            ResumenBar()
           ],
         );
       },
