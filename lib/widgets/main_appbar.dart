@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_app/constants/constants.dart';
 import 'package:mobile_app/ui/cart/cart.dart';
+import 'package:mobile_app/ui/information/information.dart';
 import 'package:mobile_app/utils/utils.dart';
 import 'package:presentation/presentation.dart';
 
@@ -87,7 +88,7 @@ class MainAppBarState extends State<MainAppBar> {
             ],
             if(widget.enableInfo)...[
               IconButton(
-                onPressed: () {}, 
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => InformationView())), 
                 icon: Icon(Icons.info_outline),
                 visualDensity: VisualDensity.compact,
                 splashRadius: 18,
