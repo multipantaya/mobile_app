@@ -8,7 +8,7 @@ import 'package:presentation/presentation.dart';
 
 class MainAppBar extends StatefulWidget implements PreferredSizeWidget {
   const MainAppBar({
-    Key? key, this.enableActions = true,
+    Key? key, this.enableActions = true, this.enableInfo = true
   })  : preferredSize = const Size.fromHeight(kToolbarHeight),
       super(key: key);
   @override
@@ -17,6 +17,7 @@ class MainAppBar extends StatefulWidget implements PreferredSizeWidget {
   @override
   final Size preferredSize;
   final bool enableActions;
+  final bool enableInfo;
 }
 
 class MainAppBarState extends State<MainAppBar> {
@@ -48,8 +49,9 @@ class MainAppBarState extends State<MainAppBar> {
             ],
           ),
           actions: [
-            if(widget.enableActions)
+            if(widget.enableActions)...[
               Stack(
+                alignment: Alignment.center,
                 children: [
                   IconButton(
                     onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => CartView())), 
@@ -81,7 +83,17 @@ class MainAppBarState extends State<MainAppBar> {
                       ),
                     )
                 ],
-              )
+              ),
+            ],
+            if(widget.enableInfo)...[
+              IconButton(
+                onPressed: () {}, 
+                icon: Icon(Icons.info_outline),
+                visualDensity: VisualDensity.compact,
+                splashRadius: 18,
+              ),
+              const SizedBox(width: 10,),
+            ]
           ],
         );
       },

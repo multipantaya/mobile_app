@@ -36,4 +36,6 @@ class HomeCubit extends Cubit<HomeState> {
     }
     emit(state.copyWith(platforms: newPlatform,platformsFavorite: newPlatformFavorte));
   }
+
+  pageIndex(int page) => emit(state.copyWith(pageIndex: page));
 }
