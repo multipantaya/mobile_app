@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:domain/domain.dart';
 import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
+import 'package:mobile_app/constants/constants.dart';
 import 'package:mobile_app/database/cart_data.dart';
 part 'cart_state.dart';
 
@@ -9,7 +10,7 @@ class CartCubit extends Cubit<CartState> {
   CartCubit() : super(const CartState());
 
   init () async{
-    final objetProducts = Hive.box<CartData>('cart');
+    final objetProducts = Hive.box<CartData>(MPYKeys.boxCart);
     List<ProductModel> products = [];
     if(objetProducts.length == 1){
       products = objetProducts.get(0)?.products ?? [];
@@ -18,7 +19,7 @@ class CartCubit extends Cubit<CartState> {
         products.addAll(objetProducts.get(i)?.products ?? []);
       }
     }
-    emit(state.copyWith(products: products));
+    emit(state.copyWith(products: products,objetProducts: objetProducts));
     updateTotalPrice(replace: false);
   }
 
@@ -102,9 +103,8 @@ class CartCubit extends Cubit<CartState> {
 
   replaceData({bool replace = true}){
     if(replace){
-      final objetProducts = Hive.box<CartData>('cart');
-      objetProducts.clear();
-      objetProducts.add(CartData(products: state.products));
+      state.objetProducts!.clear();
+      state.objetProducts!.add(CartData(products: state.products));
     }
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_portal/flutter_portal.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:mobile_app/constants/constants.dart';
 import 'package:mobile_app/core/core.dart';
 import 'package:mobile_app/database/cart_data.dart';
 import 'package:mobile_app/ui/cart/cart.dart';
@@ -19,7 +20,7 @@ void main() async{
   Hive.registerAdapter(PlatformsModelAdapter());
   Hive.registerAdapter(ProductModelAdapter());
   Hive.registerAdapter(CartDataAdapter());
-  Hive.openBox<CartData>('cart');
+  Hive.openBox<CartData>(MPYKeys.boxCart);
   runApp(const MyApp());
 }
 
