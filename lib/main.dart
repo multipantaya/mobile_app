@@ -12,6 +12,8 @@ import 'package:mobile_app/ui/home/home.dart';
 import 'package:mobile_app/ui/plan_details/plan_details.dart';
 import 'package:presentation/presentation.dart';
 
+import 'database/platform_data.dart';
+
 void main() async{
   //INICIA HIVE
   await Hive.initFlutter();
@@ -20,7 +22,9 @@ void main() async{
   Hive.registerAdapter(PlatformsModelAdapter());
   Hive.registerAdapter(ProductModelAdapter());
   Hive.registerAdapter(CartDataAdapter());
+  Hive.registerAdapter(PlatformDataAdapter());
   Hive.openBox<CartData>(MPYKeys.boxCart);
+  Hive.openBox<PlatformData>(MPYKeys.boxPlatforms);
   runApp(const MyApp());
 }
 

@@ -1,7 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:hive/hive.dart';
 import 'package:mobile_app/constants/constants.dart';
 import 'package:domain/domain.dart';
+import 'package:mobile_app/database/platform_data.dart';
 part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
@@ -10,12 +12,32 @@ class HomeCubit extends Cubit<HomeState> {
   initPlatform () {
     final images = [MPYImages.hbo,MPYImages.amazon,MPYImages.disney,MPYImages.youtube,MPYImages.spotify,MPYImages.netflix];
     int index = 0;
-    final List<PlatformsModel> platforms = [];
+    List<PlatformsModel> platforms = [];
+    List<PlatformsModel> platformsFavorite = [];
     for (var plan in dataPlatforms) {
       platforms.add(plan.copyWith(image: images[index]));
       index++;
     }
-    emit(state.copyWith(platforms: platforms));
+    
+    final objetPlatform = Hive.box<PlatformData>(MPYKeys.boxPlatforms);
+    final savePlat = objetPlatform.get(0)?.platforms ?? [];
+    if(savePlat.isEmpty){
+      objetPlatform.clear();
+      objetPlatform.add(PlatformData(platforms: platforms));
+    }else{
+      platforms = savePlat;
+    }
+
+    for (var plat in platforms) {
+      if(plat.favorite){
+        platformsFavorite.add(plat.copyWith(id: '${plat.id+'F'}'));
+      }
+    }
+    emit(state.copyWith(
+      platforms: platforms,
+      platformsFavorite: platformsFavorite,
+      objectPlatform: objetPlatform
+    ));
   }
 
   favoritePlatform ({required String id}) {
@@ -35,7 +57,16 @@ class HomeCubit extends Cubit<HomeState> {
       }
     }
     emit(state.copyWith(platforms: newPlatform,platformsFavorite: newPlatformFavorte));
+    replaceData();
   }
 
   pageIndex(int page) => emit(state.copyWith(pageIndex: page));
+
+  replaceData({bool replace = true}){
+    if(replace){
+      if(state.objectPlatform!.isNotEmpty){
+        state.objectPlatform!.putAt(0,PlatformData(platforms: state.platforms));
+      }
+    }
+  }
 }

@@ -27,7 +27,7 @@ class CartCubit extends Cubit<CartState> {
     List<ProductModel> newPlatforms = [];
     bool exist = false;
     for (var product in state.products) {
-      if(product.platform.plans.first.id == platform.plans.first.id){
+      if(product.platform.plans.first.id == platform.plans.first.id && product.platform.id == platform.id){
         exist = true;
         newPlatforms.add(
           product.copyWith(platform: product.platform.copyWith(
