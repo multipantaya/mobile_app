@@ -63,7 +63,7 @@ class MainAppBarState extends State<MainAppBar> {
                   ),
                   if(state.products.isNotEmpty)
                     Positioned(
-                      top: 0,
+                      top: 6,
                       right: 0,
                       child: Container(
                         padding: const EdgeInsets.all(2),

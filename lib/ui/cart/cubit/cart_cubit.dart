@@ -11,13 +11,15 @@ class CartCubit extends Cubit<CartState> {
   init () async{
     final objetProducts = Hive.box<CartData>('cart');
     List<ProductModel> products = [];
-    for (var i = 0; i < objetProducts.length; i++) {
-      products.addAll(objetProducts.get(i)! as List<ProductModel>);
+    if(objetProducts.length == 1){
+      products = objetProducts.get(0)?.products ?? [];
+    }else{
+      for (var i = 0; i < objetProducts.length; i++) {
+        products.addAll(objetProducts.get(i)?.products ?? []);
+      }
     }
-    emit(state.copyWith(
-      products: products
-    ));
-    updateTotalPrice();
+    emit(state.copyWith(products: products));
+    updateTotalPrice(replace: false);
   }
 
   addToCart (PlatformsModel platform) {
@@ -89,18 +91,20 @@ class CartCubit extends Cubit<CartState> {
     updateTotalPrice();
   }
 
-  updateTotalPrice(){
+  updateTotalPrice({bool replace = true}){
     double total = 0;
     for (var product in state.products) {
       total = total + (product.platform.totalAmount * product.platform.plans.first.price);
     }
     emit(state.copyWith(total: total));
-    replaceData();
+    replaceData(replace: replace);
   }
 
-  replaceData(){
-    final objetProducts = Hive.box<CartData>('cart');
-    objetProducts.clear();
-    objetProducts.add(CartData(products: state.products));
+  replaceData({bool replace = true}){
+    if(replace){
+      final objetProducts = Hive.box<CartData>('cart');
+      objetProducts.clear();
+      objetProducts.add(CartData(products: state.products));
+    }
   }
 }
