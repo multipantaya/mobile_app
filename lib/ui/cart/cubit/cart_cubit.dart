@@ -1,10 +1,24 @@
 import 'package:bloc/bloc.dart';
 import 'package:domain/domain.dart';
 import 'package:equatable/equatable.dart';
+import 'package:hive/hive.dart';
+import 'package:mobile_app/database/cart_data.dart';
 part 'cart_state.dart';
 
 class CartCubit extends Cubit<CartState> {
   CartCubit() : super(const CartState());
+
+  init () async{
+    final objetProducts = Hive.box<CartData>('cart');
+    List<ProductModel> products = [];
+    for (var i = 0; i < objetProducts.length; i++) {
+      products.addAll(objetProducts.get(i)! as List<ProductModel>);
+    }
+    emit(state.copyWith(
+      products: products
+    ));
+    updateTotalPrice();
+  }
 
   addToCart (PlatformsModel platform) {
     List<ProductModel> newPlatforms = [];
@@ -81,5 +95,12 @@ class CartCubit extends Cubit<CartState> {
       total = total + (product.platform.totalAmount * product.platform.plans.first.price);
     }
     emit(state.copyWith(total: total));
+    replaceData();
+  }
+
+  replaceData(){
+    final objetProducts = Hive.box<CartData>('cart');
+    objetProducts.clear();
+    objetProducts.add(CartData(products: state.products));
   }
 }
