@@ -23,7 +23,7 @@ class HomeCubit extends Cubit<HomeState> {
     List<PlatformsModel> newPlatformFavorte = [];
 
     for (var platform in state.platforms) {
-      if(platform.id == id) {
+      if(platform.id == id.replaceAll('F', '')) {
         newPlatform.add(platform.copyWith(favorite: !platform.favorite));
       }else{
         newPlatform.add(platform);
@@ -31,7 +31,7 @@ class HomeCubit extends Cubit<HomeState> {
     }
     for (var platform in newPlatform) {
       if(platform.favorite) {
-        newPlatformFavorte.add(platform);
+        newPlatformFavorte.add(platform.copyWith(id: '${platform.id+'F'}'));
       }
     }
     emit(state.copyWith(platforms: newPlatform,platformsFavorite: newPlatformFavorte));

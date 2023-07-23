@@ -29,6 +29,7 @@ class MainAppBarState extends State<MainAppBar> {
         return AppBar(
           backgroundColor: AppTheme.colors.background,
           elevation: 0,
+          
           title: Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
