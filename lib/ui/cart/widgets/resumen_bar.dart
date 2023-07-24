@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile_app/utils/utils.dart';
 import 'package:presentation/presentation.dart';
 
 class ResumenBar extends StatelessWidget {
@@ -42,7 +43,11 @@ class ResumenBar extends StatelessWidget {
           const SizedBox(width: 10,),
           AppButtonMini(
             onPressed: () {
-              
+              String title = '';
+              LinksAppUtils().openLinkApp(
+                context: context,
+                url: 'https://wa.me/573502415832?text=${Uri.encodeComponent('!siii se puede y me encantta')}'
+              );
             }, 
             text: 'Realizar pedido'
           )
