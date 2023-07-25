@@ -39,7 +39,7 @@ class ContentCart extends StatelessWidget {
               )
             ),
             const SizedBox(height: 15,),
-            ResumenBar(totalPrice: state.total,)
+            ResumenBar(totalPrice: state.total,products: state.products,)
           ],
         );
       },
