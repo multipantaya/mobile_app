@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:mobile_app/constants/constants.dart';
+import 'package:mobile_app/ui/home/home.dart';
 import 'package:mobile_app/utils/media_utils.dart';
 import 'package:mobile_app/widgets/widgets.dart';
 import 'package:presentation/presentation.dart';
@@ -24,6 +26,12 @@ class SplashPageState extends State<SplashPage> {
         AppLayout.routeName,
       );
     });
+  }
+
+  @override
+  void didChangeDependencies() {
+    context.read<HomeCubit>().initPlatform(AppLocalizations.of(context)!);
+    super.didChangeDependencies();
   }
 
   @override

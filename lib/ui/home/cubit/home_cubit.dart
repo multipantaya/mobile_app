@@ -3,18 +3,19 @@ import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
 import 'package:mobile_app/constants/constants.dart';
 import 'package:domain/domain.dart';
-import 'package:mobile_app/database/platform_data.dart';
+import 'package:mobile_app/database/database.dart';
+import 'package:mobile_app/widgets/widgets.dart';
 part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(const HomeState());
 
-  initPlatform () {
+  initPlatform (AppLocalizations texts) {
     final images = [/*MPYImages.hbo,MPYImages.amazon,MPYImages.disney,*/MPYImages.netflix,MPYImages.spotify,MPYImages.youtube,];
     int index = 0;
     List<PlatformsModel> platforms = [];
     List<PlatformsModel> platformsFavorite = [];
-    for (var plan in dataPlatforms) {
+    for (var plan in InfoPlatform.dataPlatforms(texts)) {
       platforms.add(plan.copyWith(image: images[index]));
       index++;
     }
