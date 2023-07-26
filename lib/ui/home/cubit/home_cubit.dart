@@ -10,7 +10,7 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(const HomeState());
 
   initPlatform () {
-    final images = [MPYImages.hbo,MPYImages.amazon,MPYImages.disney,MPYImages.youtube,MPYImages.spotify,MPYImages.netflix];
+    final images = [/*MPYImages.hbo,MPYImages.amazon,MPYImages.disney,*/MPYImages.netflix,MPYImages.spotify,MPYImages.youtube,];
     int index = 0;
     List<PlatformsModel> platforms = [];
     List<PlatformsModel> platformsFavorite = [];
