@@ -11,12 +11,32 @@ class InformationContent extends StatelessWidget {
   Widget build(BuildContext context) {
     final texts = AppLocalizations.of(context)!; 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          texts.howToBuy,
-          textAlign: TextAlign.center,
-          style: AppTheme.textStyles.titleText,
+        Center(
+          child: Text(
+            texts.paymentMethod,
+            textAlign: TextAlign.center,
+            style: AppTheme.textStyles.titleText,
+          ),
+        ),
+        const SizedBox(height: 10,),
+        ...texts.paymentMethodText.split('*').map((e) => 
+          Padding(
+            padding: const EdgeInsets.only(bottom: 5),
+            child: Text(
+              '✓ $e',
+              style: AppTheme.textStyles.white16F400,
+            ),
+          )
+        ).toList(),
+        const SizedBox(height: 5,),
+        Center(
+          child: Text(
+            texts.howToBuy,
+            textAlign: TextAlign.center,
+            style: AppTheme.textStyles.titleText,
+          ),
         ),
         const SizedBox(height: 10,),
         RichText(
@@ -68,7 +88,7 @@ class InformationContent extends StatelessWidget {
             style: AppTheme.textStyles.white16F700,
             children: [
              TextSpan(
-               text: '${texts.stepFourText} ',
+               text: ': ${texts.stepFourText} ',
                style: AppTheme.textStyles.white16F400
               ),
               TextSpan(

@@ -39,7 +39,7 @@ class CardPlatform extends StatelessWidget {
                 platform.image,
                 useFileImage: false,
                 fit: isFavorite ? BoxFit.cover  : BoxFit.contain,
-                height: isFavorite ? 150 : null
+                height: isFavorite ? 150 : 200
               ),
             ),
           ),
