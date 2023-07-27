@@ -12,7 +12,7 @@ class InformationView extends StatelessWidget {
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
           child: InformationContent(),
         ),
       ),

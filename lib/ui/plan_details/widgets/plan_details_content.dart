@@ -52,7 +52,10 @@ class PlanDetailsContent extends StatelessWidget {
 
             AppButton(
               name: texts.addToCart,
-              onPressed: () => cuibt.addToCart(state.platform!.copyWith(plans: [state.plan!])),
+              onPressed: () {
+                cuibt.addToCart(state.platform!.copyWith(plans: [state.plan!]));
+                SnackbarUtils.popupSnackBar(context: context, text: texts.addedProduct);
+              },
             ),
 
             const SizedBox(height: 20,),
