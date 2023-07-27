@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_app/ui/home/home.dart';
 import 'package:mobile_app/ui/plan_details/plan_details.dart';
 import 'package:mobile_app/utils/media_utils.dart';
+import 'package:mobile_app/widgets/widgets.dart';
 import 'package:presentation/presentation.dart';
 
 class CardPlatform extends StatelessWidget {
@@ -16,6 +17,7 @@ class CardPlatform extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final cubit = context.read<PlanDetailsCubit>();
+    final texts = AppLocalizations.of(context)!;
     return Container(
       width: isFavorite
         ? 200
@@ -79,7 +81,7 @@ class CardPlatform extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Conoce nuestros planes',
+                    texts.discoverPlans,
                     maxLines: 1,
                     style: AppTheme.textStyles.white14F700,
                   ),
@@ -99,7 +101,7 @@ class CardPlatform extends StatelessWidget {
                       ),
                       const SizedBox(width: 10,),
                       AppButtonMini(
-                        text: 'Ver planes',
+                        text: texts.viewPlans,
                         onPressed: () {
                           cubit.setPlatform(platform);
                           Navigator.push(context, MaterialPageRoute(builder: (context) => PlanDetailsView()));
@@ -112,7 +114,7 @@ class CardPlatform extends StatelessWidget {
             )
             else
               AppButton(
-                name: 'Ver planes',
+                name: texts.viewPlans,
                 onPressed: () {
                   cubit.setPlatform(platform);
                   Navigator.push(context, MaterialPageRoute(builder: (context) => PlanDetailsView()));

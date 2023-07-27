@@ -12,6 +12,7 @@ class PlanDetailsContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final texts = AppLocalizations.of(context)!;
     return BlocBuilder<PlanDetailsCubit, PlanDetailsState>(
       builder: (context, state) {
         final cuibt = context.read<CartCubit>();
@@ -50,14 +51,14 @@ class PlanDetailsContent extends StatelessWidget {
             const SizedBox(height: 20,),
 
             AppButton(
-              name: 'Agregar al carrito',
+              name: texts.addToCart,
               onPressed: () => cuibt.addToCart(state.platform!.copyWith(plans: [state.plan!])),
             ),
 
             const SizedBox(height: 20,),
 
             AutoSizeText(
-              'Caracteristicas',
+              texts.characteristics,
               minFontSize: 14,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,

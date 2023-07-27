@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app/widgets/widgets.dart';
 import 'package:presentation/presentation.dart';
 
 class SelectAmount extends StatelessWidget {
@@ -14,7 +15,7 @@ class SelectAmount extends StatelessWidget {
     return Row(
       children: [
         Expanded(child: Text(
-          'Cuentas a comprar',
+          AppLocalizations.of(context)!.accountsToBuy,
           textAlign: textAlign ?? TextAlign.justify,
           style: textStyle ?? AppTheme.textStyles.white16F700,
         )),

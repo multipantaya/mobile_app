@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_app/utils/utils.dart';
+import 'package:mobile_app/widgets/widgets.dart';
 import 'package:presentation/presentation.dart';
 
 class ResumenBar extends StatelessWidget {
@@ -11,6 +12,7 @@ class ResumenBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final texts = AppLocalizations.of(context)!;
     return Container(
       padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
@@ -23,8 +25,8 @@ class ResumenBar extends StatelessWidget {
             child: Column(
               children: [
                 AutoSizeText(
-                  'Total a pagar del pedido',
-                  maxLines: 1,
+                  texts.totalToPayCart,
+                  maxLines: 1, 
                   minFontSize: 12,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.justify,
@@ -45,17 +47,17 @@ class ResumenBar extends StatelessWidget {
           const SizedBox(width: 10,),
           AppButtonMini(
             onPressed: () {
-              String title = 'Hola soy Juan Pablo Carrillo Gamarra y quiero realizar el siguiente pedido: \n\n';
+              String title = '${texts.messageIntroduction} \n\n';
               for (var product in products) {
-                title = title + '✓ ${product.platform.totalAmount} ${product.platform.totalAmount == 1 ? 'Cuenta' : 'Cuentas'}  ${product.platform.namePlatform} en plan ${product.platform.plans.first.namePlan} \n';
+                title = title + '✓ ${product.platform.totalAmount} ${product.platform.totalAmount == 1 ? texts.account : texts.accounts}  ${product.platform.namePlatform} ${texts.inPlans} ${product.platform.plans.first.namePlan} \n';
               }
-              title = title + '\n Total a pagar: ${totalPrice} USD';
+              title = title + '\n ${texts.totalToPay}: ${totalPrice} USD';
               LinksAppUtils().openLinkApp(
                 context: context,
                 url: 'https://wa.me/18482367939?text=$title'
               );
             }, 
-            text: 'Realizar pedido'
+            text: texts.makeAnOrder
           )
         ],
       ),

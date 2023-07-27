@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_app/ui/home/home.dart';
+import 'package:mobile_app/widgets/widgets.dart';
 import 'package:presentation/presentation.dart';
 
 class BottonNavigationBar extends StatelessWidget {
@@ -10,6 +11,7 @@ class BottonNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final texts = AppLocalizations.of(context)!;
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
         return Container(
@@ -29,11 +31,11 @@ class BottonNavigationBar extends StatelessWidget {
               items: [
                 BottomNavigationBarItem(
                   icon: Icon(Icons.home,size: 30),
-                  label: 'Principal',
+                  label: texts.principal,
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(Icons.favorite,size: 30),
-                  label: 'Favoritos',
+                  label: texts.favorite,
                 ),
               ]
             ),

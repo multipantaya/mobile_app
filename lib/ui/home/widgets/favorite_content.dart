@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_app/constants/constants.dart';
 import 'package:mobile_app/ui/home/home.dart';
 import 'package:mobile_app/utils/media_utils.dart';
+import 'package:mobile_app/widgets/widgets.dart';
 import 'package:presentation/presentation.dart';
 
 class FavoriteContent extends StatelessWidget {
@@ -10,6 +11,7 @@ class FavoriteContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final texts = AppLocalizations.of(context)!;
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
         return SingleChildScrollView(
@@ -21,7 +23,7 @@ class FavoriteContent extends StatelessWidget {
                 children: [
                   Center(
                     child: Text(
-                      '¡Tus plataformas favoritas!',
+                      texts.platformFavorite,
                       textAlign: TextAlign.center,
                       style: AppTheme.textStyles.titleText,
                     ),
@@ -45,7 +47,7 @@ class FavoriteContent extends StatelessWidget {
                             height: 100
                           ),
                           Text(
-                            'No tienes favoritos agregados',
+                            texts.notPlatformFavorite,
                             textAlign: TextAlign.center,
                             style: AppTheme.textStyles.titleText,
                           ),

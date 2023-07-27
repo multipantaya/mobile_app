@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_app/ui/home/home.dart';
+import 'package:mobile_app/widgets/widgets.dart';
 import 'package:presentation/presentation.dart';
 
 class HomeContent extends StatelessWidget {
@@ -8,6 +9,7 @@ class HomeContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final texts = AppLocalizations.of(context)!;
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
         return SingleChildScrollView(
@@ -18,14 +20,14 @@ class HomeContent extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    '¡Disfruta del Entretenimiento sin Límites!',
+                    texts.unlimitedTraining,
                     textAlign: TextAlign.center,
                     style: AppTheme.textStyles.titleText,
                   ),
                   const SizedBox(height: 20,),
                   const SizedBox(height: 20,),
                   Text(
-                    'Todas nuestras plataformas',
+                    texts.allPlatforms,
                     textAlign: TextAlign.center,
                     style: AppTheme.textStyles.titleText,
                   ),

@@ -1,4 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile_app/ui/information/information.dart';
+import 'package:mobile_app/widgets/widgets.dart';
 import 'package:presentation/presentation.dart';
 
 class InformationContent extends StatelessWidget {
@@ -6,11 +9,12 @@ class InformationContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final texts = AppLocalizations.of(context)!; 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
-          '¿Cómo Comprar?',
+          texts.howToBuy,
           textAlign: TextAlign.center,
           style: AppTheme.textStyles.titleText,
         ),
@@ -18,11 +22,11 @@ class InformationContent extends StatelessWidget {
         RichText(
           textAlign: TextAlign.justify,
           text: TextSpan(
-            text: '1. Explora nuestros productos: ',
+            text: texts.stepOne,
             style: AppTheme.textStyles.white16F700,
             children: [
              TextSpan(
-              text: 'Navega a través de nuestra amplia selección de productos y encuentra lo que necesitas.',
+              text: texts.stepOneText,
               style: AppTheme.textStyles.white16F400
              )
             ]
@@ -32,11 +36,11 @@ class InformationContent extends StatelessWidget {
         RichText(
           textAlign: TextAlign.justify,
           text: TextSpan(
-            text: '2. Añade al carrito: ',
+            text: texts.stepTwo,
             style: AppTheme.textStyles.white16F700,
             children: [
              TextSpan(
-              text: 'Haz clic en el botón "Agregar al carrito" para seleccionar los productos que deseas comprar.',
+              text: texts.stepTwoText,
               style: AppTheme.textStyles.white16F400
              )
             ]
@@ -46,13 +50,44 @@ class InformationContent extends StatelessWidget {
         RichText(
           textAlign: TextAlign.justify,
           text: TextSpan(
-            text: '3. Revisa tu carrito: ',
+            text: texts.stepThree,
             style: AppTheme.textStyles.white16F700,
             children: [
              TextSpan(
-              text: 'Ve al carrito de compras para verificar los artículos seleccionados y ajustar las cantidades si es necesario.',
+              text: texts.stepThreeText,
               style: AppTheme.textStyles.white16F400
              )
+            ]
+          )
+        ),
+        SizedBox(height: 10),
+        RichText(
+          textAlign: TextAlign.justify,
+          text: TextSpan(
+            text: texts.stepFour,
+            style: AppTheme.textStyles.white16F700,
+            children: [
+             TextSpan(
+               text: '${texts.stepFourText} ',
+               style: AppTheme.textStyles.white16F400
+              ),
+              TextSpan(
+               text: texts.termAndConditions.toLowerCase(),
+               style: TextStyle(
+                color: AppTheme.colors.white,
+                fontWeight: AppTheme.fontWeight.fW700,
+                fontSize: 16,
+                decoration: TextDecoration.underline,
+                decorationColor: AppTheme.colors.white
+               ),
+               recognizer: TapGestureRecognizer()..onTap = (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => TermAndConditionsView()));
+               }
+              ),
+              TextSpan(
+               text: ' ${texts.stepFourText}',
+               style: AppTheme.textStyles.white16F400
+              ),
             ]
           )
         ),

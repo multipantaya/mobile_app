@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_app/utils/utils.dart';
+import 'package:mobile_app/widgets/widgets.dart';
 import 'package:presentation/presentation.dart';
 
 class ImageDetail extends StatelessWidget {
@@ -53,7 +54,7 @@ class ImageDetail extends StatelessWidget {
                 children: [
                   Expanded(
                     child: AutoSizeText(
-                      'SubTotal',
+                      AppLocalizations.of(context)!.subTotal,
                       minFontSize: 12,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
