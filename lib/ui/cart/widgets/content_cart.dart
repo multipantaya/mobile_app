@@ -12,6 +12,16 @@ class ContentCart extends StatelessWidget {
       builder: (context, state) {
         return Column(
           children: [
+            if(state.products.isEmpty)...[
+              const SizedBox(height: 30,),
+              Center(
+                child: Text(
+                  'Que esperas arma tu mejor plan con nuestro catalogo!',
+                  textAlign: TextAlign.center,
+                  style: AppTheme.textStyles.titleText,
+                ),
+              ),
+            ],
             Expanded(
               child: ListView.separated(
                 itemCount: state.products.length,

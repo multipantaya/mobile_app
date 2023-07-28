@@ -101,6 +101,11 @@ class CartCubit extends Cubit<CartState> {
     replaceData(replace: replace);
   }
 
+  clearCart(){
+    emit(state.copyWith(products: []));
+    updateTotalPrice();
+  }
+
   replaceData({bool replace = true}){
     if(replace){
       state.objetProducts!.clear();
