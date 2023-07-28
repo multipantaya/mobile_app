@@ -1,1 +1,1 @@
-export 'dialog_error_success.dart';
+export 'app_dialog_custom.dart';

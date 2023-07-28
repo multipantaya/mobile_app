@@ -47,15 +47,27 @@ class ResumenBar extends StatelessWidget {
           const SizedBox(width: 10,),
           AppButtonMini(
             onPressed: () {
-              String title = '${texts.messageIntroduction} \n\n';
-              for (var product in products) {
-                title = title + '✓ ${product.platform.totalAmount} ${product.platform.totalAmount == 1 ? texts.account : texts.accounts}  ${product.platform.namePlatform} ${texts.inPlans} ${product.platform.plans.first.namePlan} \n';
-              }
-              title = title + '\n ${texts.totalToPay}: ${totalPrice} USD';
-              LinksAppUtils().openLinkApp(
-                context: context,
-                url: 'https://wa.me/18482367939?text=$title'
-              );
+              showDialog(
+                context: context, 
+                builder: (context) => AlertDialogCustom(
+                  title: 'Informacion importante', 
+                  text: 'Estas aceptando nuestros terminos y condiciones',
+                  needTwoButtons: true,
+                  onTap: () => Navigator.of(context).pop(true),
+                ),
+              ).then((value) {
+                if(value is bool && value){
+                  String title = '${texts.messageIntroduction} \n\n';
+                  for (var product in products) {
+                    title = title + '✓ ${product.platform.totalAmount} ${product.platform.totalAmount == 1 ? texts.account : texts.accounts}  ${product.platform.namePlatform} ${texts.inPlans} ${product.platform.plans.first.namePlan} \n';
+                  }
+                  title = title + '\n ${texts.totalToPay}: ${totalPrice} USD';
+                  LinksAppUtils().openLinkApp(
+                    context: context,
+                    url: 'https://wa.me/18482367939?text=$title'
+                  );
+                }
+              });
             }, 
             text: texts.makeAnOrder
           )
