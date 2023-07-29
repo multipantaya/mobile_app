@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_app/ui/cart/cart.dart';
+import 'package:mobile_app/widgets/widgets.dart';
 import 'package:presentation/presentation.dart';
 
 class ContentCart extends StatelessWidget {
@@ -8,6 +9,7 @@ class ContentCart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final texts = AppLocalizations.of(context)!;
     return BlocBuilder<CartCubit, CartState>(
       builder: (context, state) {
         return Column(
@@ -16,7 +18,7 @@ class ContentCart extends StatelessWidget {
               const SizedBox(height: 30,),
               Center(
                 child: Text(
-                  'Que esperas arma tu mejor plan con nuestro catalogo!',
+                  texts.buildThePlan,
                   textAlign: TextAlign.center,
                   style: AppTheme.textStyles.titleText,
                 ),

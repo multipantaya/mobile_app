@@ -54,12 +54,12 @@ class ResumenBar extends StatelessWidget {
                 showDialog(
                   context: context, 
                   builder: (context) => AlertDialogCustom(
-                    title: 'Informacion importante', 
-                    text: 'Al enviar el pedido, usted acepta y se compromete a cumplir los términos y condiciones del servicio.',
+                    title: texts.importantInformation, 
+                    text: texts.importantInformationText,
                     needTwoButtons: true,
                     onTap: () => Navigator.of(context).pop(true),
                     colorsCancelButton: AppTheme.colors.primaryColor,
-                    textButtonCancel: 'Ver politicas',
+                    textButtonCancel: texts.seePolitics,
                     onTapCancel: () => Navigator.push(context, MaterialPageRoute(builder: (context) => TermAndConditionsView())),
                   ),
                 ).then((value) {

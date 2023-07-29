@@ -49,5 +49,9 @@
   "stepFiveText":"Una vez la compra esté completada se le enviaron sus datos de inicio de sesión a su whatsApp registrado en el momento que realizó la compra",
   "addedProduct":"Producto agregado",
   "paymentMethod":"Métodos de pago",
-  "paymentMethodText":"Tarjetas de credito / debito *Paypal *Zelle *Zinli *Transferencias interbancarias"
+  "paymentMethodText":"Tarjetas de credito / debito *Paypal *Zelle *Zinli *Transferencias interbancarias",
+  "buildThePlan":"Que esperas, para tu mejor plan con nuestro catálogo!",
+  "importantInformation":"Información importante",
+  "seePolitics":"Ver políticas",
+  "importantInformationText":"Al enviar el pedido, usted acepta y se compromete a cumplir los términos y condiciones del servicio."
 }

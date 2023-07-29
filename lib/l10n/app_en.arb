@@ -49,5 +49,9 @@
   "stepFiveText":"Once the purchase is complete, your login details will be sent to your registered WhatsApp at the time you made the purchase.",
   "addedProduct":"Added product",
   "paymentMethod":"Payment methods",
-  "paymentMethodText":"Credit / debit cards *Paypal *Zelle *Zinli *Interbank transfers"
+  "paymentMethodText":"Credit / debit cards *Paypal *Zelle *Zinli *Interbank transfers",
+  "buildThePlan":"What are you waiting for, for your best plan with our catalog!",
+  "importantInformation":"Important information",
+  "seePolitics":"See policies",
+  "importantInformationText":"By submitting the order, you accept and agree to abide by the terms and conditions of service."
 }
