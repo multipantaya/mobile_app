@@ -1,5 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:mobile_app/database/database.dart';
+import 'package:mobile_app/database/information/term_conditons_data.dart';
 import 'package:mobile_app/ui/information/information.dart';
 import 'package:mobile_app/widgets/widgets.dart';
 import 'package:presentation/presentation.dart';
@@ -101,11 +103,38 @@ class InformationContent extends StatelessWidget {
                 decorationColor: AppTheme.colors.white
                ),
                recognizer: TapGestureRecognizer()..onTap = (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => TermAndConditionsView()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => TermAndConditionsView(
+                  title: AppLocalizations.of(context)!.termAndConditions, 
+                  data: TermConditionData.dataTerms()
+                  )));
                }
               ),
               TextSpan(
-               text: ' ${texts.stepFourText}',
+               text: ' ${texts.stepFourTextComplement}. ',
+               style: AppTheme.textStyles.white16F400
+              ), 
+              TextSpan(
+               text: '${texts.stepSix}'  , 
+               style: AppTheme.textStyles.white16F400
+              ),
+              TextSpan(
+               text: texts.politicsPrivacy.toLowerCase(),
+               style: TextStyle(
+                color: AppTheme.colors.white,
+                fontWeight: AppTheme.fontWeight.fW700,
+                fontSize: 16,
+                decoration: TextDecoration.underline,
+                decorationColor: AppTheme.colors.white
+               ),
+               recognizer: TapGestureRecognizer()..onTap = (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => TermAndConditionsView(
+                  title: AppLocalizations.of(context)!.politicsPrivacy, 
+                  data: PoliticsData.dataTerms()
+                  )));
+               }
+              ),
+              TextSpan(
+               text: ' ${texts.stepSixText}'  , 
                style: AppTheme.textStyles.white16F400
               ),
             ]

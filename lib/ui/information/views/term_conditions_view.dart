@@ -1,16 +1,15 @@
+import 'package:domain/models/text/simple_text_model.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_app/database/information/term_conditons_data.dart';
 import 'package:mobile_app/widgets/main_appbar.dart';
-import 'package:mobile_app/widgets/widgets.dart';
 import 'package:presentation/presentation.dart';
 
 class TermAndConditionsView extends StatelessWidget {
-  const TermAndConditionsView({super.key});
+  final String title;
+  final List<SimpleTextModel> data;
+  const TermAndConditionsView({super.key, required this.title, required this.data});
 
   @override
   Widget build(BuildContext context) {
-    final texts = AppLocalizations.of(context)!;
-    final data = TermConditionData.dataTerms();
     return Scaffold(
       appBar: const MainAppBar(enableActions: false,enableInfo: false),
       body: Padding(
@@ -18,7 +17,7 @@ class TermAndConditionsView extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              texts.termAndConditions.toUpperCase(),
+              title.toUpperCase(),
               style: AppTheme.textStyles.titleText,
             ),
             const SizedBox(height: 10,),
@@ -33,12 +32,14 @@ class TermAndConditionsView extends StatelessWidget {
                 itemBuilder: (BuildContext context, int index) {
                   return Column(
                     children: [
-                      Text(
+                      if(data[index].title.isNotEmpty)...[
+                        Text(
                         data[index].title,
                         textAlign: TextAlign.center,
                         style: AppTheme.textStyles.white16Bold,
                       ),
                       const SizedBox(height: 10,),
+                      ],
                       Text(
                         data[index].content,
                         textAlign: TextAlign.justify,

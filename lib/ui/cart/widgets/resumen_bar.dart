@@ -3,7 +3,7 @@ import 'package:domain/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_app/ui/cart/cart.dart';
-import 'package:mobile_app/ui/information/information.dart';
+// import 'package:mobile_app/ui/information/information.dart';
 import 'package:mobile_app/utils/utils.dart';
 import 'package:mobile_app/widgets/widgets.dart';
 import 'package:presentation/presentation.dart';
@@ -60,7 +60,7 @@ class ResumenBar extends StatelessWidget {
                     onTap: () => Navigator.of(context).pop(true),
                     colorsCancelButton: AppTheme.colors.primaryColor,
                     textButtonCancel: texts.seePolitics,
-                    onTapCancel: () => Navigator.push(context, MaterialPageRoute(builder: (context) => TermAndConditionsView())),
+                    onTapCancel: () {} /*=> Navigator.push(context, MaterialPageRoute(builder: (context) => TermAndConditionsView()))*/,
                   ),
                 ).then((value) {
                   if(value is bool && value){

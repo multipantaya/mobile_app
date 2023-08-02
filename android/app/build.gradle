@@ -26,11 +26,11 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 //COMENTAR PARA GENERAR APK DE PRUEBA
-def keystoreProperties = new Properties()
-def keystorePropertiesFile = rootProject.file('key.properties')
-if (keystorePropertiesFile.exists()) {
-    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-}
+// def keystoreProperties = new Properties()
+// def keystorePropertiesFile = rootProject.file('key.properties')
+// if (keystorePropertiesFile.exists()) {
+//     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+// }
 
 android {
     namespace "com.makiber.multipantaya"
@@ -62,19 +62,19 @@ android {
     }
 
     //COMENTAR PARA GENERAR APK DE PRUEBA
-    signingConfigs {
-       release {
-           keyAlias keystoreProperties['keyAlias']
-           keyPassword keystoreProperties['keyPassword']
-           storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-           storePassword keystoreProperties['storePassword']
-       }
-   }
+//     signingConfigs {
+//        release {
+//            keyAlias keystoreProperties['keyAlias']
+//            keyPassword keystoreProperties['keyPassword']
+//            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
+//            storePassword keystoreProperties['storePassword']
+//        }
+//    }
 
     buildTypes {
         release {
-            signingConfig signingConfigs.release
-            // signingConfig signingConfigs.debug //DESCOMENTAR PARA GENERAR APK DE PRUEBA
+            // signingConfig signingConfigs.release
+            signingConfig signingConfigs.debug //DESCOMENTAR PARA GENERAR APK DE PRUEBA
         }
     }
 }

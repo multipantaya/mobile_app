@@ -35,7 +35,7 @@ class PlanAndPrice extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: AutoSizeText(
-                  '\$ ${state.plan!.price} USD',
+                  '\$ ${state.plan!.price * (state.platform?.totalAmount ?? 1)} USD',
                   style: AppTheme.textStyles.white16F500,
                 ),
               )
