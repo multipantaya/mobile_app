@@ -37,8 +37,8 @@ class AlertDialogCheck extends StatefulWidget {
 }
 
 class _AlertDialogCheckState extends State<AlertDialogCheck> {
-  late bool aceptTerm = true;
-  late bool aceptPolitics = true;
+  late bool aceptTerm = false;
+  late bool aceptPolitics = false;
   @override
   Widget build(BuildContext context) {
     return Dialog(
