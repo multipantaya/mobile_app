@@ -30,7 +30,7 @@ class infoPlans {
       price: 15.00, 
       description: [
         SimpleTextModel(
-          title: texts.sixViewsHeader, 
+          title: texts.sixViewsHeaderNetflix, 
           content: texts.sixViewsText
         ),
         SimpleTextModel(
@@ -57,7 +57,7 @@ class infoPlans {
         ),
         SimpleTextModel(
           title: texts.maxQualityHeader, 
-          content: texts.maxQualityText
+          content: texts.maxQualityTextYotube
         ),
         SimpleTextModel(
           title: texts.noAdsYoutube, 
@@ -76,7 +76,7 @@ class infoPlans {
         ),
         SimpleTextModel(
           title: texts.maxQualityHeader, 
-          content: texts.maxQualityText
+          content: texts.maxQualityTextYotube
         ),
         SimpleTextModel(
           title: texts.noAdsYoutube, 
