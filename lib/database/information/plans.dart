@@ -7,9 +7,13 @@ class infoPlans {
   static List<PlansModel> dataPlansNetflix(AppLocalizations texts) => [
     PlansModel(
       id: '1', 
-      namePlan: texts.planBasic, 
-      price: 6.00, 
+      namePlan: texts.planOneNetflix, 
+      price: 6.00,  
       description: [
+        SimpleTextModel(
+          title: texts.yourAcount, 
+          content: texts.yourAcountNetflix
+        ),
         SimpleTextModel(
           title: texts.maxQualityHeader, 
           content: texts.maxQualityText
@@ -22,7 +26,7 @@ class infoPlans {
     ),
     PlansModel(
       id: '2', 
-      namePlan: texts.planPremium,  
+      namePlan: texts.planTwoNetflix,  
       price: 15.00, 
       description: [
         SimpleTextModel(
@@ -44,9 +48,13 @@ class infoPlans {
   static List<PlansModel> dataPlansYoutube(AppLocalizations texts) => [
     PlansModel(
       id: '3', 
-      namePlan: texts.planBasic, 
+      namePlan: texts.planOneYoutube, 
       price: 6.00, 
       description: [
+        SimpleTextModel(
+          title: texts.yourAcount, 
+          content: texts.yourAcountYoutube
+        ),
         SimpleTextModel(
           title: texts.maxQualityHeader, 
           content: texts.maxQualityText
@@ -59,7 +67,7 @@ class infoPlans {
     ),
     PlansModel(
       id: '4', 
-      namePlan: texts.planPremium, 
+      namePlan: texts.planTwoYoutube, 
       price: 15.00, 
       description: [
         SimpleTextModel(
@@ -81,9 +89,13 @@ class infoPlans {
   static List<PlansModel> dataPlansSpotify(AppLocalizations texts) => [
     PlansModel(
       id: '5', 
-      namePlan: texts.planBasic, 
+      namePlan: texts.planOneSpotify, 
       price: 5.00, 
       description: [
+        SimpleTextModel(
+          title: texts.yourAcount, 
+          content: texts.yourAcountSpotify
+        ),
         SimpleTextModel(
           title: texts.experienceSpotify, 
           content: texts.experienceSpotifyText
@@ -96,7 +108,7 @@ class infoPlans {
     ),
     PlansModel(
       id: '6', 
-      namePlan: texts.planPremium, 
+      namePlan: texts.planTwoSpotify, 
       price: 12.00, 
       description: [
         SimpleTextModel(

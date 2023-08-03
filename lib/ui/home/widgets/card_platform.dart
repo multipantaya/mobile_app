@@ -55,6 +55,7 @@ class CardPlatform extends StatelessWidget {
                     platform.namePlatform,
                     minFontSize: 14,
                     maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                     style: isFavorite ? AppTheme.textStyles.white14F700: AppTheme.textStyles.titleText,
                   ),
                 ),
@@ -95,6 +96,7 @@ class CardPlatform extends StatelessWidget {
                             '✓ ${e.namePlan}',
                             maxLines: 1,
                             textAlign: TextAlign.justify,
+                            overflow: TextOverflow.ellipsis,
                             style: AppTheme.textStyles.white14F400,
                           )).toList(),
                         )

@@ -52,15 +52,12 @@ class ResumenBar extends StatelessWidget {
             onPressed: products.isNotEmpty
               ? () {
                 showDialog(
-                  context: context, 
-                  builder: (context) => AlertDialogCustom(
-                    title: texts.importantInformation, 
-                    text: texts.importantInformationText,
-                    needTwoButtons: true,
+                  context: context,  
+                  builder: (context) => AlertDialogCheck(
+                    title: texts.importantInformation.toUpperCase(), 
+                    text: '${texts.informationToSend}${texts.importantInformationText}', 
+                    textAlign: TextAlign.justify,
                     onTap: () => Navigator.of(context).pop(true),
-                    colorsCancelButton: AppTheme.colors.primaryColor,
-                    textButtonCancel: texts.seePolitics,
-                    onTapCancel: () {} /*=> Navigator.push(context, MaterialPageRoute(builder: (context) => TermAndConditionsView()))*/,
                   ),
                 ).then((value) {
                   if(value is bool && value){
