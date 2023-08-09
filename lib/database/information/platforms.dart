@@ -12,9 +12,20 @@ class InfoPlatform {
     image: '', 
     favorite: false,
     totalAmount: 1,
-    plans: index == 0 ? infoPlans.dataPlansNetflix(texts) : index == 1 ? infoPlans.dataPlansSpotify(texts): infoPlans.dataPlansYoutube(texts)
+    plans: index == 0 
+    ? infoPlans.dataPlansNetflix(texts) : index == 1 
+      ? infoPlans.dataPlansSpotify(texts)
+      : index == 2
+        ? infoPlans.dataPlansYoutube(texts)
+        : index == 3
+          ? infoPlans.dataPlansDisney(texts)
+          : index == 4
+            ? infoPlans.dataPlansHboUsa(texts)
+            : index == 5
+              ? infoPlans.dataPlansHboLatam(texts)
+              : infoPlans.dataPlansPrime(texts)
     )
   );
 } 
 
-final List<String> namesPlatform = [/*'HBO MAX','PRIME VIDEO','DISNEY PLUS',*/'NETFLIX','SPOTIFY','YOUTUBE PREMIUM'];
+final List<String> namesPlatform = ['NETFLIX','SPOTIFY','YOUTUBE PREMIUM','DISNEY PLUS','HBO MAX USA','HBO MAX LATAM','PRIME VIDEO',];

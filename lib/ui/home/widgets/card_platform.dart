@@ -38,7 +38,7 @@ class CardPlatform extends StatelessWidget {
               child: MediaUtils().getImageWidget(
                 platform.image,
                 useFileImage: false,
-                fit: isFavorite ? BoxFit.cover  : BoxFit.contain,
+                fit:BoxFit.cover,
                 height: isFavorite ? 150 : 200
               ),
             ),

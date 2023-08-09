@@ -71,5 +71,10 @@
   "planTwoSpotify":"Familiar (6)",
   "planOneYoutube":"Individual (1)",
   "planTwoYoutube":"Familiar (6)",
+  "hboUsa":"Válido para USA:",
+  "youtubeAnuality":"Plan anual:",
+  "youtubeAnualityText":"El precio corresponde al valor por un año completo de Youtube Premium con todos sus beneficios.",
+  "hboUsaText":"Este plan solamente funcionará dentro del territorio de estados unidos.",
+  "hboLatamText":"Este plan solamente funcionará dentro del territorio de america latina.",
   "informationToSend":"Todos nuestros servicios son cuentas nuevas y originales de las marcas, no podemos renovar cuentas existentes o vencidas.\n\nTu cuenta es totalmente segura y por ello todo el tramite se realiza directamente con un representante en nuestra línea de WhatsApp una vez reciba el pedido que estas enviando.\n\n"
 }
