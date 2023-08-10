@@ -9,4 +9,10 @@ class MPYImages {
   static const String netflix = 'assets/images/netflix.jpg';
   static const String spotify = 'assets/images/spotify.png';
   static const String youtube = 'assets/images/youtube.png';
+  static const String cash = 'assets/images/cash.png';
+  static const String chino = 'assets/images/chino.png';
+  static const String paypal = 'assets/images/paypal.png';
+  static const String raro = 'assets/images/raro.png';
+  static const String zelle = 'assets/images/zelle.png';
+  static const String zinli = 'assets/images/zinli.png';
 }

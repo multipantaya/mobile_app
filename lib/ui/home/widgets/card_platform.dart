@@ -17,6 +17,7 @@ class CardPlatform extends StatelessWidget {
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final cubit = context.read<PlanDetailsCubit>();
+    final payment = context.read<HomeCubit>().state.paymentMethos;
     final texts = AppLocalizations.of(context)!;
     return Container(
       width: isFavorite
@@ -45,9 +46,9 @@ class CardPlatform extends StatelessWidget {
           ),
 
           const SizedBox(height: 10,),
-
+ 
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               children: [
                 Expanded(
@@ -82,7 +83,7 @@ class CardPlatform extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    texts.discoverPlans,
+                    texts.paymentMethods,  
                     maxLines: 1,
                     style: AppTheme.textStyles.white14F700,
                   ),
@@ -90,14 +91,15 @@ class CardPlatform extends StatelessWidget {
                   Row(
                     children: [
                       Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: platform.plans.map((e) => Text(
-                            '✓ ${e.namePlan}',
-                            maxLines: 1,
-                            textAlign: TextAlign.justify,
-                            overflow: TextOverflow.ellipsis,
-                            style: AppTheme.textStyles.white14F400,
+                        child: Wrap(
+                          alignment: WrapAlignment.spaceAround,
+                          children: payment.map((e) => ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: MediaUtils().getImageWidget(
+                              e,
+                              useFileImage: false,
+                              height: 45,
+                            ),
                           )).toList(),
                         )
                       ),
