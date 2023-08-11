@@ -8,9 +8,9 @@ class infoPlans {
     PlansModel(
       id: '1', 
       namePlan: texts.planOneNetflix, 
-      price: 6.00,  
+      price: 7.00,  
       description: [
-        SimpleTextModel(
+        SimpleTextModel( 
           title: texts.yourAcount, 
           content: texts.yourAcountNetflix
         ),
@@ -49,7 +49,7 @@ class infoPlans {
     PlansModel(
       id: '3', 
       namePlan: texts.planOneYoutube, 
-      price: 6.00, 
+      price: 60.00, 
       description: [
         SimpleTextModel(
           title: texts.youtubeAnuality, 
@@ -69,36 +69,36 @@ class infoPlans {
         ),
       ]
     ),
-    PlansModel(
-      id: '4', 
-      namePlan: texts.planTwoYoutube, 
-      price: 15.00, 
-      description: [
-        SimpleTextModel(
-          title: texts.youtubeAnuality, 
-          content: texts.youtubeAnualityText
-        ),
-        SimpleTextModel(
-          title: texts.sixViewsHeader, 
-          content: texts.sixViewsTextYoutube
-        ),
-        SimpleTextModel(
-          title: texts.maxQualityHeader, 
-          content: texts.maxQualityTextYotube
-        ),
-        SimpleTextModel(
-          title: texts.noAdsYoutube, 
-          content: texts.noAdsYoutubeText
-        ),
-      ]
-    ),
+    // PlansModel(
+    //   id: '4', 
+    //   namePlan: texts.planTwoYoutube, 
+    //   price: 15.00, 
+    //   description: [
+    //     SimpleTextModel(
+    //       title: texts.youtubeAnuality, 
+    //       content: texts.youtubeAnualityText
+    //     ),
+    //     SimpleTextModel(
+    //       title: texts.sixViewsHeader, 
+    //       content: texts.sixViewsTextYoutube
+    //     ),
+    //     SimpleTextModel(
+    //       title: texts.maxQualityHeader, 
+    //       content: texts.maxQualityTextYotube
+    //     ),
+    //     SimpleTextModel(
+    //       title: texts.noAdsYoutube, 
+    //       content: texts.noAdsYoutubeText
+    //     ),
+    //   ]
+    // ),
   ];
 
   static List<PlansModel> dataPlansSpotify(AppLocalizations texts) => [
     PlansModel(
       id: '5', 
       namePlan: texts.planOneSpotify, 
-      price: 5.00, 
+      price: 6.00, 
       description: [
         SimpleTextModel(
           title: texts.yourAcount, 
@@ -117,7 +117,7 @@ class infoPlans {
     PlansModel(
       id: '6', 
       namePlan: texts.planTwoSpotify, 
-      price: 12.00, 
+      price: 13.00, 
       description: [
         SimpleTextModel(
           title: texts.sixViewsHeader, 
@@ -138,8 +138,8 @@ class infoPlans {
   static List<PlansModel> dataPlansDisney(AppLocalizations texts) => [
     PlansModel(
       id: '1', 
-      namePlan: texts.planOneNetflix, 
-      price: 6.00,  
+      namePlan: texts.planOneDisneyPrime, 
+      price: 5.00,  
       description: [
         SimpleTextModel(
           title: texts.yourAcount, 
@@ -157,12 +157,12 @@ class infoPlans {
     ),
     PlansModel(
       id: '2', 
-      namePlan: texts.planTwoNetflix,  
-      price: 15.00, 
+      namePlan: texts.planTwoDisneyPrime,  
+      price: 8.00, 
       description: [
         SimpleTextModel(
-          title: texts.sixViewsHeaderNetflix, 
-          content: texts.sixViewsText
+          title: texts.fourViewsHeader, 
+          content: texts.fourViewsText
         ),
         SimpleTextModel(
           title: texts.maxQualityHeader, 
@@ -176,59 +176,59 @@ class infoPlans {
     ),
   ];
 
-  static List<PlansModel> dataPlansHboUsa(AppLocalizations texts) => [
-    PlansModel(
-      id: '1', 
-      namePlan: texts.planOneNetflix, 
-      price: 6.00,  
-      description: [
-        SimpleTextModel(
-          title: texts.hboUsa, 
-          content: texts.hboUsaText
-        ),
-        SimpleTextModel(
-          title: texts.yourAcount, 
-          content: texts.yourAcountNetflix.replaceAll('Netflix', 'HBO MAX')
-        ),
-        SimpleTextModel(
-          title: texts.maxQualityHeader, 
-          content: texts.maxQualityText
-        ),
-        SimpleTextModel(
-          title: texts.allAccessHeader, 
-          content: texts.allAccessText
-        ),
-      ]
-    ),
-    PlansModel(
-      id: '2', 
-      namePlan: texts.planTwoNetflix,  
-      price: 15.00, 
-      description: [
-        SimpleTextModel(
-          title: texts.hboUsa, 
-          content: texts.hboUsaText
-        ),
-        SimpleTextModel(
-          title: texts.sixViewsHeaderNetflix, 
-          content: texts.sixViewsText
-        ),
-        SimpleTextModel(
-          title: texts.maxQualityHeader, 
-          content: texts.maxQualityText
-        ),
-        SimpleTextModel(
-          title: texts.allAccessHeader, 
-          content: texts.allAccessText.replaceAll('Netflix', 'HBO MAX')
-        ),
-      ]
-    ),
-  ];
+  // static List<PlansModel> dataPlansHboUsa(AppLocalizations texts) => [
+  //   PlansModel(
+  //     id: '1', 
+  //     namePlan: texts.planOneNetflix, 
+  //     price: 6.00,  
+  //     description: [
+  //       SimpleTextModel(
+  //         title: texts.hboUsa, 
+  //         content: texts.hboUsaText
+  //       ),
+  //       SimpleTextModel(
+  //         title: texts.yourAcount, 
+  //         content: texts.yourAcountNetflix.replaceAll('Netflix', 'HBO MAX')
+  //       ),
+  //       SimpleTextModel(
+  //         title: texts.maxQualityHeader, 
+  //         content: texts.maxQualityText
+  //       ),
+  //       SimpleTextModel(
+  //         title: texts.allAccessHeader, 
+  //         content: texts.allAccessText
+  //       ),
+  //     ]
+  //   ),
+  //   PlansModel(
+  //     id: '2', 
+  //     namePlan: texts.planTwoNetflix,  
+  //     price: 15.00, 
+  //     description: [
+  //       SimpleTextModel(
+  //         title: texts.hboUsa, 
+  //         content: texts.hboUsaText
+  //       ),
+  //       SimpleTextModel(
+  //         title: texts.sixViewsHeaderNetflix, 
+  //         content: texts.sixViewsText
+  //       ),
+  //       SimpleTextModel(
+  //         title: texts.maxQualityHeader, 
+  //         content: texts.maxQualityText
+  //       ),
+  //       SimpleTextModel(
+  //         title: texts.allAccessHeader, 
+  //         content: texts.allAccessText.replaceAll('Netflix', 'HBO MAX')
+  //       ),
+  //     ]
+  //   ),
+  // ];
 
   static List<PlansModel> dataPlansHboLatam(AppLocalizations texts) => [
     PlansModel(
       id: '1', 
-      namePlan: texts.planOneNetflix, 
+      namePlan: texts.planOneDisneyPrime, 
       price: 6.00,  
       description: [
         SimpleTextModel(
@@ -251,16 +251,16 @@ class infoPlans {
     ),
     PlansModel(
       id: '2', 
-      namePlan: texts.planTwoNetflix,  
-      price: 15.00, 
+      namePlan: texts.planTwoDisneyPrime,  
+      price: 12.00, 
       description: [
         SimpleTextModel(
           title: texts.hboUsa.replaceAll('USA', 'LATAM'), 
           content: texts.hboLatamText
         ),
         SimpleTextModel(
-          title: texts.sixViewsHeaderNetflix, 
-          content: texts.sixViewsText
+          title: texts.fourViewsHeader, 
+          content: texts.fourViewsText
         ),
         SimpleTextModel(
           title: texts.maxQualityHeader, 
@@ -277,8 +277,8 @@ class infoPlans {
   static List<PlansModel> dataPlansPrime(AppLocalizations texts) => [
     PlansModel(
       id: '1', 
-      namePlan: texts.planOneNetflix, 
-      price: 6.00,  
+      namePlan: texts.planOneDisneyPrime, 
+      price: 7.00,  
       description: [
         SimpleTextModel(
           title: texts.yourAcount, 
@@ -296,16 +296,16 @@ class infoPlans {
     ),
     PlansModel(
       id: '2', 
-      namePlan: texts.planTwoNetflix,  
-      price: 15.00, 
+      namePlan: texts.planTwoDisneyPrime,  
+      price: 14.00, 
       description: [
         SimpleTextModel(
-          title: texts.sixViewsHeaderNetflix, 
-          content: texts.sixViewsText
+          title: texts.fourViewsHeader, 
+          content: texts.fourViewsText
         ),
         SimpleTextModel(
           title: texts.maxQualityHeader, 
-          content: texts.maxQualityText
+          content: texts.maxQualityText 
         ),
         SimpleTextModel(
           title: texts.allAccessHeader, 

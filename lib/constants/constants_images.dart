@@ -15,4 +15,6 @@ class MPYImages {
   static const String raro = 'assets/images/raro.png';
   static const String zelle = 'assets/images/zelle.png';
   static const String zinli = 'assets/images/zinli.png';
+  static const String mastercard = 'assets/images/mastercard.png';
+  static const String visa = 'assets/images/visa.png';
 }

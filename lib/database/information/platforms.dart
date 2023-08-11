@@ -20,12 +20,12 @@ class InfoPlatform {
         : index == 3
           ? infoPlans.dataPlansDisney(texts)
           : index == 4
-            ? infoPlans.dataPlansHboUsa(texts)
-            : index == 5
+            // ? infoPlans.dataPlansHboUsa(texts)
+            // : index == 5
               ? infoPlans.dataPlansHboLatam(texts)
               : infoPlans.dataPlansPrime(texts)
     )
   );
 } 
 
-final List<String> namesPlatform = ['NETFLIX','SPOTIFY','YOUTUBE PREMIUM','DISNEY PLUS','HBO MAX USA','HBO MAX LATAM','PRIME VIDEO',];
+final List<String> namesPlatform = ['NETFLIX','SPOTIFY','YOUTUBE PREMIUM','DISNEY PLUS'/*,'HBO MAX USA'*/,'HBO MAX LATAM','PRIME VIDEO',];

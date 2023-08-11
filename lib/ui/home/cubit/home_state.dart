@@ -4,7 +4,7 @@ class HomeState extends Equatable {
   const HomeState({
     this.platforms = const [],
     this.platformsFavorite = const [],
-    this.paymentMethos = const [MPYImages.raro,MPYImages.cash,MPYImages.zinli,MPYImages.paypal,MPYImages.chino,MPYImages.zelle],
+    this.paymentMethos = const [MPYImages.mastercard,MPYImages.visa,MPYImages.raro,MPYImages.cash,MPYImages.zinli,MPYImages.paypal,MPYImages.chino,MPYImages.zelle],
     this.pageIndex = 0,
     this.objectPlatform
   });

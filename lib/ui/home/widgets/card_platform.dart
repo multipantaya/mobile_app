@@ -83,9 +83,10 @@ class CardPlatform extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
-                    child: Text(
+                    child: AutoSizeText(
                       texts.paymentMethods,
                       textAlign: TextAlign.center,
+                      maxLines: 1,
                       style: AppTheme.textStyles.white14F700,
                     ),
                   ),
@@ -110,7 +111,7 @@ class CardPlatform extends StatelessWidget {
                           child: MediaUtils().getImageWidget(
                             e,
                             useFileImage: false,
-                            height: 40,
+                            height: 35,
                           ),
                         )).toList(),
                       ),
