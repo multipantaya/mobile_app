@@ -143,7 +143,7 @@ class infoPlans {
       description: [
         SimpleTextModel(
           title: texts.yourAcount, 
-          content: texts.yourAcountNetflix.replaceAll('Netflix', 'Disney Plus')
+          content: (texts.yourAcountNetflix).replaceAll('Netflix', 'Disney Plus')
         ),
         SimpleTextModel(
           title: texts.maxQualityHeader, 
@@ -169,8 +169,8 @@ class infoPlans {
           content: texts.maxQualityText
         ),
         SimpleTextModel(
-          title: texts.allAccessHeader, 
-          content: texts.allAccessText.replaceAll('Netflix', 'Disney Plus')
+          title: texts.allAccessHeader,  
+          content: (texts.allAccessText).replaceAll('Netflix', 'Disney Plus')
         ),
       ]
     ),

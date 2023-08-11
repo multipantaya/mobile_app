@@ -82,34 +82,37 @@ class CardPlatform extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    texts.paymentMethods,  
-                    maxLines: 1,
-                    style: AppTheme.textStyles.white14F700,
+                  Center(
+                    child: Text(
+                      texts.paymentMethods,
+                      textAlign: TextAlign.center,
+                      style: AppTheme.textStyles.white14F700,
+                    ),
                   ),
-                  const SizedBox(height: 5,),
-                  Row(
+                  const SizedBox(height: 10,),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Expanded(
-                        child: Wrap(
-                          alignment: WrapAlignment.spaceAround,
-                          children: payment.map((e) => ClipRRect(
-                            borderRadius: BorderRadius.circular(10),
-                            child: MediaUtils().getImageWidget(
-                              e,
-                              useFileImage: false,
-                              height: 45,
-                            ),
-                          )).toList(),
-                        )
-                      ),
-                      const SizedBox(width: 10,),
-                      AppButtonMini(
-                        text: texts.viewPlans,
+                      AppButton(
+                        name: texts.viewPlans,
                         onPressed: () {
                           cubit.setPlatform(platform);
                           Navigator.push(context, MaterialPageRoute(builder: (context) => PlanDetailsView()));
                         },
+                      ),
+                      const SizedBox(height: 20,),
+                      Wrap(
+                        alignment: WrapAlignment.spaceAround,
+                        spacing: 10,
+                        runSpacing: 10,
+                        children: payment.map((e) => ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: MediaUtils().getImageWidget(
+                            e,
+                            useFileImage: false,
+                            height: 40,
+                          ),
+                        )).toList(),
                       ),
                     ],
                   ),

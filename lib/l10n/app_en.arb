@@ -5,7 +5,7 @@
   "maxQualityText": "You can enjoy the content in the highest quality available. This means you'll be able to watch movies and TV shows in 4K resolution on compatible TVs, offering a sharper picture, vibrant colors and stunning detail.",
   "maxQualityTextYotube": "You can enjoy the content in the highest quality available. This means you'll be able to watch all your videos in 4K resolution on compatible devices, offering a sharper image, vibrant colors and stunning detail.",
   "allAccessHeader":"Access to the complete catalogue:",
-  "allAccessText":"Gives you unlimited access to the entire Netflix content catalog. You can browse and watch all the original movies, series, documentaries and shows available on the platform without any limitations.",
+  "allAccessText":"It gives you unlimited access to the entire catalog available on the platform. You can browse and watch all the original movies, series, documentaries and shows available on the platform without any limitations.",
   "sixViewsHeader":"Up to six devices simultaneously:",
   "sixViewsHeader":"Up to five devices simultaneously:",
   "sixViewsText":"This plan allows you to watch content on up to five different devices at the same time. You can share your account with family or friends and enjoy your favorite shows without restrictions, even if each person wants to watch something different on different devices.",
@@ -76,6 +76,6 @@
   "youtubeAnualityText":"The price corresponds to the value for a full year of Youtube Premium with all its benefits.",
   "hboUsaText":"This plan will only work within the territory of the United States.",
   "hboLatamText":"This plan will only work within the territory of Latin America.",
-  "paymentMethods":"Learn about our payment methods",
+  "paymentMethods":"All our plans have their prices in American dollars (USD)",
   "informationToSend":"All our services are new and original accounts of the brands, we cannot renew existing or expired accounts.\n\nYour account is completely secure and therefore all the processing is done directly with a representative on our WhatsApp line once you receive the order you are sending.\n\n"
 }
