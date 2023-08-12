@@ -39,7 +39,7 @@ class MainAppBarState extends State<MainAppBar> {
                 width: 30,
                 height: 30,
                 fit: BoxFit.contain,
-                color: AppTheme.colors.white.withOpacity(0.5)
+                // color: AppTheme.colors.white.withOpacity(0.5)
               ),
               const SizedBox(width: 5,),
               AutoSizeText(

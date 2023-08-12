@@ -28,4 +28,4 @@ class InfoPlatform {
   );
 } 
 
-final List<String> namesPlatform = ['NETFLIX','SPOTIFY','YOUTUBE PREMIUM','DISNEY PLUS'/*,'HBO MAX USA'*/,'HBO MAX LATAM','PRIME VIDEO',];
+final List<String> namesPlatform = ['NETFLIX','SPOTIFY','YOUTUBE PREMIUM','DISNEY PLUS'/*,'HBO MAX USA'*/,'HBO MAX LAT','PRIME VIDEO',];

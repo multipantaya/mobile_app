@@ -14,33 +14,31 @@ class HomeContent extends StatelessWidget {
       builder: (context, state) {
         return SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
-          child: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Column(
-                children: [
-                  Text(
-                    texts.unlimitedTraining,
-                    textAlign: TextAlign.center,
-                    style: AppTheme.textStyles.titleText,
-                  ),
-                  const SizedBox(height: 20,),
-                  const SizedBox(height: 20,),
-                  Text(
-                    texts.allPlatforms,
-                    textAlign: TextAlign.center,
-                    style: AppTheme.textStyles.titleText,
-                  ),
-                  const SizedBox(height: 20,),
-                  Wrap(
-                    runSpacing: 20,
-                    spacing: 15,
-                    children: state.platforms.map((e) => CardPlatform(platform: e,isFavorite: false,)).toList(),
-                  ),
-                  const SizedBox(height: 30,),
-                ],
-              )
-            ), 
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Column(
+              children: [
+                Text(
+                  texts.unlimitedTraining,
+                  textAlign: TextAlign.center,
+                  style: AppTheme.textStyles.titleText,
+                ),
+                const SizedBox(height: 20,),
+                const SizedBox(height: 20,),
+                Text(
+                  texts.allPlatforms,
+                  textAlign: TextAlign.center,
+                  style: AppTheme.textStyles.titleText,
+                ),
+                const SizedBox(height: 20,),
+                Wrap(
+                  runSpacing: 20,
+                  spacing: 15,
+                  children: state.platforms.map((e) => CardPlatform(platform: e,isFavorite: false,)).toList(),
+                ),
+                const SizedBox(height: 30,),
+              ],
+            )
           ),
         );
       },

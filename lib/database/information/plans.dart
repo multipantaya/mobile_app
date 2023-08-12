@@ -232,7 +232,7 @@ class infoPlans {
       price: 6.00,  
       description: [
         SimpleTextModel(
-          title: texts.hboUsa.replaceAll('USA', 'LATAM'), 
+          title: texts.hbolatam, 
           content: texts.hboLatamText
         ),
         SimpleTextModel(
