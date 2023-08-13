@@ -64,10 +64,11 @@ class ResumenBar extends StatelessWidget {
                   if(value is bool && value){
                     String title = '${texts.messageIntroduction} \n\n';
                     for (var product in products) {
-                      title = title + '✓ ${product.platform.totalAmount} ${product.platform.totalAmount == 1 ? texts.account : texts.accounts}  ${product.platform.namePlatform} ${texts.inPlans} ${product.platform.plans.first.namePlan} \n\n';
+                      title = title + '✓ ${product.platform.totalAmount} ${product.platform.totalAmount == 1 ? texts.account : texts.accounts}  ${product.platform.namePlatform} ${texts.inPlans} ${product.platform.plans.first.namePlan} (${product.platform.plans.first.price} USD C/U) \n\n';
                     }
-                    title = title + '*${texts.totalToPay}: ${totalPrice} USD*\n\n';
-                    title = title + '*Metodo de pago seleccionado: ${cubit.state.paymentSelected.trim()}*';
+                    title = title + 'Metodo de pago seleccionado: *${cubit.state.paymentSelected.trim()}*\n\n';
+                    title = title + '*${texts.totalToPay}: ${totalPrice} USD*\n';
+                    
                     LinksAppUtils().openLinkApp(
                       context: context,
                       url: 'https://wa.me/18482367939?text=$title',

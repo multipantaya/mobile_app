@@ -114,7 +114,7 @@ class InformationContent extends StatelessWidget {
                style: AppTheme.textStyles.white16F400
               ), 
               TextSpan(
-               text: '${texts.stepSix} '  , 
+               text: '${texts.stepSix.trim()} '  , 
                style: AppTheme.textStyles.white16F400
               ),
               TextSpan(

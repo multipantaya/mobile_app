@@ -8,7 +8,7 @@ class infoPlans {
     PlansModel(
       id: '1', 
       namePlan: texts.planOneNetflix, 
-      price: 7.00,  
+      price: 6.00,  
       description: [
         SimpleTextModel( 
           title: texts.yourAcount, 
