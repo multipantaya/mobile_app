@@ -82,5 +82,6 @@
   "paymentMethods":"Our plans are in dollars (USD)",
   "informationToSend":"All our services are new and original accounts of the brands, we cannot renew existing or expired accounts.\n\nYour account is completely secure and therefore all the processing is done directly with a representative on our WhatsApp line once you receive the order you are sending.\n\n",
   "fourViewsHeader": "Up to four devices simultaneously:",
+  "selectedPaymentMethod":"Select a payment method",
   "fourViewsText": "This plan allows you to watch content on up to four different devices at the same time. You can share your account with family members or friends and enjoy your favorite shows without restrictions, even if each person wants to watch something different on separate devices."
 }

@@ -60,18 +60,18 @@ class ResumenBar extends StatelessWidget {
                     onTap: () => Navigator.of(context).pop(true),
                   ),
                 ).then((value) {
+                  final cubit = context.read<CartCubit>();
                   if(value is bool && value){
                     String title = '${texts.messageIntroduction} \n\n';
                     for (var product in products) {
-                      title = title + '✓ ${product.platform.totalAmount} ${product.platform.totalAmount == 1 ? texts.account : texts.accounts}  ${product.platform.namePlatform} ${texts.inPlans} ${product.platform.plans.first.namePlan} \n';
+                      title = title + '✓ ${product.platform.totalAmount} ${product.platform.totalAmount == 1 ? texts.account : texts.accounts}  ${product.platform.namePlatform} ${texts.inPlans} ${product.platform.plans.first.namePlan} \n\n';
                     }
-                    title = title + '\n ${texts.totalToPay}: ${totalPrice} USD';
+                    title = title + '*${texts.totalToPay}: ${totalPrice} USD*\n\n';
+                    title = title + '*Metodo de pago seleccionado: ${cubit.state.paymentSelected.trim()}*';
                     LinksAppUtils().openLinkApp(
                       context: context,
                       url: 'https://wa.me/18482367939?text=$title',
-                      onClear: () {
-                        context.read<CartCubit>().clearCart();
-                      },
+                      onClear: () => cubit.clearCart(),
                     );
                   }
                 });

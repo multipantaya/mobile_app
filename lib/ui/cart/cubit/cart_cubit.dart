@@ -102,7 +102,7 @@ class CartCubit extends Cubit<CartState> {
   }
 
   clearCart(){
-    emit(state.copyWith(products: []));
+    emit(state.copyWith(products: [],paymentSelected: ''));
     updateTotalPrice();
   }
 
@@ -112,4 +112,6 @@ class CartCubit extends Cubit<CartState> {
       state.objetProducts!.add(CartData(products: state.products));
     }
   }
+
+  selectPaymentMethod (String value) => emit(state.copyWith(paymentSelected: value));
 }

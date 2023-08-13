@@ -96,11 +96,11 @@ class InformationContent extends StatelessWidget {
               TextSpan(
                text: texts.termAndConditions.toLowerCase(),
                style: TextStyle(
-                color: AppTheme.colors.white,
+                color: AppTheme.colors.primaryColor,
                 fontWeight: AppTheme.fontWeight.fW700,
                 fontSize: 16,
                 decoration: TextDecoration.underline,
-                decorationColor: AppTheme.colors.white
+                decorationColor: AppTheme.colors.primaryColor
                ),
                recognizer: TapGestureRecognizer()..onTap = (){
                 Navigator.push(context, MaterialPageRoute(builder: (context) => TermAndConditionsView(
@@ -114,17 +114,17 @@ class InformationContent extends StatelessWidget {
                style: AppTheme.textStyles.white16F400
               ), 
               TextSpan(
-               text: '${texts.stepSix}'  , 
+               text: '${texts.stepSix} '  , 
                style: AppTheme.textStyles.white16F400
               ),
               TextSpan(
                text: texts.politicsPrivacy.toLowerCase(),
                style: TextStyle(
-                color: AppTheme.colors.white,
+                color: AppTheme.colors.primaryColor,
                 fontWeight: AppTheme.fontWeight.fW700,
                 fontSize: 16,
                 decoration: TextDecoration.underline,
-                decorationColor: AppTheme.colors.white
+                decorationColor: AppTheme.colors.primaryColor
                ),
                recognizer: TapGestureRecognizer()..onTap = (){
                 Navigator.push(context, MaterialPageRoute(builder: (context) => TermAndConditionsView(
