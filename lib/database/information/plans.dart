@@ -69,29 +69,44 @@ class infoPlans {
         ),
       ]
     ),
-    // PlansModel(
-    //   id: '4', 
-    //   namePlan: texts.planTwoYoutube, 
-    //   price: 15.00, 
-    //   description: [
-    //     SimpleTextModel(
-    //       title: texts.youtubeAnuality, 
-    //       content: texts.youtubeAnualityText
-    //     ),
-    //     SimpleTextModel(
-    //       title: texts.sixViewsHeader, 
-    //       content: texts.sixViewsTextYoutube
-    //     ),
-    //     SimpleTextModel(
-    //       title: texts.maxQualityHeader, 
-    //       content: texts.maxQualityTextYotube
-    //     ),
-    //     SimpleTextModel(
-    //       title: texts.noAdsYoutube, 
-    //       content: texts.noAdsYoutubeText
-    //     ),
-    //   ]
-    // ),
+    PlansModel(
+      id: '12', 
+      namePlan: texts.planTwoYoutube, 
+      price: 6.00, 
+      description: [
+        SimpleTextModel(
+          title: texts.yourAcount, 
+          content: (texts.yourAcountNetflix).replaceAll('Netflix', 'Youtube')
+        ),
+        SimpleTextModel(
+          title: texts.maxQualityHeader, 
+          content: texts.maxQualityTextYotube
+        ),
+        SimpleTextModel(
+          title: texts.noAdsYoutube, 
+          content: texts.noAdsYoutubeText
+        ),
+      ]
+    ),
+    PlansModel(
+      id: '13', 
+      namePlan: texts.planThreeYoutube, 
+      price: 15.00, 
+      description: [
+        SimpleTextModel(
+          title: texts.sixViewsHeader, 
+          content: texts.sixViewsTextYoutube
+        ),
+        SimpleTextModel(
+          title: texts.maxQualityHeader, 
+          content: texts.maxQualityTextYotube
+        ),
+        SimpleTextModel(
+          title: texts.noAdsYoutube, 
+          content: texts.noAdsYoutubeText
+        ),
+      ]
+    ),
   ];
 
   static List<PlansModel> dataPlansSpotify(AppLocalizations texts) => [
@@ -137,7 +152,7 @@ class infoPlans {
 
   static List<PlansModel> dataPlansDisney(AppLocalizations texts) => [
     PlansModel(
-      id: '1', 
+      id: '7', 
       namePlan: texts.planOneDisneyPrime, 
       price: 5.00,  
       description: [
@@ -156,7 +171,7 @@ class infoPlans {
       ]
     ),
     PlansModel(
-      id: '2', 
+      id: '8', 
       namePlan: texts.planTwoDisneyPrime,  
       price: 8.00, 
       description: [
@@ -227,7 +242,7 @@ class infoPlans {
 
   static List<PlansModel> dataPlansHboLatam(AppLocalizations texts) => [
     PlansModel(
-      id: '1', 
+      id: '8', 
       namePlan: texts.planOneDisneyPrime, 
       price: 6.00,  
       description: [
@@ -250,7 +265,7 @@ class infoPlans {
       ]
     ),
     PlansModel(
-      id: '2', 
+      id: '9', 
       namePlan: texts.planTwoDisneyPrime,  
       price: 12.00, 
       description: [
@@ -276,7 +291,7 @@ class infoPlans {
 
   static List<PlansModel> dataPlansPrime(AppLocalizations texts) => [
     PlansModel(
-      id: '1', 
+      id: '10', 
       namePlan: texts.planOneDisneyPrime, 
       price: 7.00,  
       description: [
@@ -295,7 +310,7 @@ class infoPlans {
       ]
     ),
     PlansModel(
-      id: '2', 
+      id: '11', 
       namePlan: texts.planTwoDisneyPrime,  
       price: 14.00, 
       description: [
